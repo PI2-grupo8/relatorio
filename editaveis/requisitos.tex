@@ -1,10 +1,65 @@
 \chapter{Requisitos}
+
+  Tendo em vista a necessidade de um entendimento comum acerca da solução que o projeto deve fornecer e da necessidade de uma
+  posterior verificação da completude desta solução, foram definidos os seguintes requisitos, sendo estes relativos às diversas
+  áreas abrangidas pelo projeto.
+
   \section{Configuração}
+
+    \begin{itemize}
+      \item O veículo deverá permitir a inserção do número de coletas a serem feitas.
+      \item O veículo deverá permitir a inserção da distância máxima a ser percorrida.
+    \end{itemize}
 
   \section{Movimentação}
 
+    \begin{itemize}
+      \item O veículo deverá permitir a movimentação entre as fileiras de morangueiros sem colisão.
+      \item O veículo deverá permitir a movimentação em terrenos irregulares.
+      \item O veículo deverá permitir a coleta nos pontos de medição definidos.
+      \item O veículo deverá permitir a manutenção de uma velocidade constante e pré-determinada.
+    \end{itemize}
+
   \section{Estrutura e Tração}
 
+    \begin{itemize}
+      \item O veículo deverá possuir dimensões capazes de acomodar os componentes internos definidos no projeto.
+      \item O veículo deverá possuir uma largura inferior ao caminho pré-definido para sua movimentação.
+      \item O veículo deverá possuir na composição de sua estrutura materiais maleáveis, leves e resistentes à corrosão e à esforços.
+      \item O veículo deverá possuir em seu revestimento materiais de alta resistência.
+      \item O veículo deverá possuir um peso suficiente para permitir a perfuração.
+      \item O veículo deverá possuir um peso que não impossibilite sua movimentação em solos que não possibilitem uma boa tração.
+    \end{itemize}
+
   \section{Perfuração e Coleta}
+
+    \begin{itemize}
+      \item O sistema de perfuração deverá permitir um furo de diâmetro compatível com o sensor escolhido para a coleta dos dados de umidade.
+      \item O sistema de perfuração deverá permitir um furo para a coleta em um ângulo diagonal.
+      \item O sistema de perfuração deverá permitir um furo com profundidade suficiente para realizar a coleta próximo as raízes.
+      \item O sistema de perfuração deverá possuir potência suficiente para que o solo seja perfurado até a distância especificada.
+      \item O sistema de perfuração deverá possuir um suporte resistente para a proteção do sensor.
+      \item O sistema de perfuração deverá permitir a perfuração do plástico protetor das raízes.
+    \end{itemize}
+
     \subsection{Coleta e Transferência dos Dados}
+
+      \begin{itemize}
+        \item O sistema de coleta de dados deverá possuir sensores capazes de coletar dados sobre a umidade do solo, umidade relativa do ar e temperatura do ambiente.
+        \item O sistema de coleta de dados deverá possuir sensores compatíveis com Arduino.
+        \item O sistema de coleta de dados deverá possuir um sensor capaz de variar o sinal de saída em função da umidade relativa do solo.
+        \item O sistema de coleta de dados deverá possuir um sensor capaz de variar o sinal conforme a variação da umidade do ar e temperatura, dentro dos limites de variação da temperatura ambiente.
+        \item O sistema de coleta de dados deverá possuir sensores de geolocalização e inerciais que auxiliem na movimentação autônoma.
+        \item O sistema de coleta de dados deverá permitir o armazenamento dos dados de forma segura e confiável.
+      \end{itemize}
+
     \subsection{Apresentação dos Dados}
+
+      \begin{itemize}
+        \item O sistema de apresentação dos dados deverá permitir a autenticação do usuário (login).
+        \item O sistema de apresentação dos dados deverá permitir o upload e leitura do arquivo proveniente do veículo.
+        \item O sistema de apresentação dos dados deverá permitir a apresentação dos dados lidos para o usuário de forma gráfica.
+        \item O sistema de apresentação dos dados deverá permitir a exportação dos dados lidos por meio de relatórios.
+        \item O sistema de apresentação dos dados deverá permitir o armazenamento dos dados lidos.
+        \item O sistema de apresentação dos dados deverá permitir a exclusão dos dados armazenados.
+      \end{itemize}
