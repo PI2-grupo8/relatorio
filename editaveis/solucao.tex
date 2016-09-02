@@ -1,4 +1,165 @@
 \chapter{Solução}
+  \section{Tração, Energia e Estrutura}
+  
+  O subsistema de tração, energia e estrutura estão relacionados porque a tracao das rodas do veiculo depende de 
+
+  \subsection{Tração}
+  
+    \subsubsection{Análise comparativa}
+  
+      \subsubsubsection{Sistema de esteira}
+      
+      O sistema de tração por esteiras é largamente utilizado em aplicações agrícolas e em aplicações gerais nas quais é necessária 
+      a locomoção em terreno acidentado. O sistema tradicional de transmissão mecânica por esteiras é formado por diversos componentes, 
+      como conversor de torque, amortecedores e dumpers. 
+    Este sistema possui como vantagem o alto fornecimento de tração ao veículo, mas requer um grande espaço para acoplamento ao mesmo, 
+    além da baixa disponibilidade de materiais para sua fabricação. Outra desvantagem é que este sistema impede que o veículo realize 
+    manobras de contra-rotação.
+      
+      \subsubsubsection{Sistema de roda}
+      
+      O sistema de rodas consiste na configuração mais utilizada em todos os tipos de veículos, a literatura é bastante consolidada 
+      no que se refere a sistemas de transmissão e acoplamentos para veículos movidos sobre rodas. Este sistema foi o escolhido para 
+      implantação neste projeto devido à sua viabilidade de projeto e fabricação.
+    Foi realizada uma pesquisa de modelos de rodas disponíveis, tendo como requisito um diâmetro de aproximadamente 10cm e pneus com 
+    perfil off-road, conforme mostra a \ref{WHEELS}.
+      
+      
+      \begin{figure}[h]
+	\centering
+	\label{WHEELS}
+	  \includegraphics[keepaspectratio=true,scale=0.3]{figuras/wheels.eps}
+	\caption{Modelo de rodas}
+      \end{figure}
+
+      \subsubsubsection{Sistema aranha}
+      
+      Este sistema de locomoção é bastante engenhoso. Consiste em vários braços, geralmente 6 ou 8, comandados por 2 motores ou 
+      mais em cada braço. Este sistema pode ser usado nos mais diversos tipos de terreno por fornecer alta estabilidade e tração 
+      satisfatória. A cinemática envolvida na movimentação e no controle deste tipo de sistema é muito mais complexa do que nos 
+      sistemas de locomoção por esteira e por rodas, devido ao alto número de motores requeridos.
+      
+      
+      \subsubsubsection{Solução adotada para o projeto}
+      
+      Dentre as outras alternativas, adotou-se a locomoção baseada em rodas, pois são mais comumente encontrados na robótica móvel, 
+      tendo em vista o baixo custo, seja na implementação como na manutenção, fornece uma boa estabilidade, além de sua simplicidade
+      mecânica. Como será aplicado em terrenos planos com algumas irregularidades, sem grandes declives e aclives, a alternativa 
+      atende bem a proposta. (Matsumura, Takao.)
+      
+      Usaremos um sistema de direção de duas barras birrotuladas, onde uma delas será acoplada ao servomotor de direção por um 
+      conjunto de pinhão e cremalheira.
+      
+      Será adotado o princípio de veículos off-road, portanto será aplicado sistemas de amortecimento nas quatro rodas para terrenos 
+      irregulares, composto por um sistema de suspensões independentes para as rodas traseiras e dependente para o conjunto das 
+      rodas dianteiras, como observado nas Mcpherson's, comum em alguns carros atuais. Foi escolhido rodas de diâmetro grande, 
+      pois com ela o sistema de tração fica mais simples e com custos menores. O veículo também poderá passar por pequenos 
+      obstáculos sem dificuldades. Com esse conjunto o robô ficará elevado em relação ao solo, levando em conta seu centro 
+      de gravidade e demais componentes atuando.
+      
+      Nas figuras \ref{SUSPENTION01} e \ref{SUSPENTION02} abaixo estão alguns exemplos quanto ao sistema de transmissão e o tipo de roda escolhida. 
+      
+      \begin{figure}[!htbp]
+	\centering
+	\label{SUSPENTION01}
+	  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/suspention01.eps}
+	\caption{Roda, suspensão e chassi Renderizados}
+      \end{figure}
+      
+      \begin{figure}[!htbp]
+	\centering
+	\label{SUSPENTION02}
+	  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/suspention02.eps}
+	\caption{Roda, suspensão e chassi Renderizados}
+      \end{figure}
+      
+      \begin{figure}[!htbp]
+	\centering
+	\label{WHEEL}
+	  \includegraphics[keepaspectratio=true,scale=0.8]{figuras/wheel.eps}
+	\caption{Roda escolhida para o projeto}
+      \end{figure}
+  
+  \subsection{Energia}
+  
+    \subsubsection{Motores Elétricos para as Rodas}
+    
+    Para o projeto, os motores precisam apresentar um torque elevado e robustez devido ao ambiente em que será submetido, 
+    porém, não justifica o emprego de motores de precisão, como são os motores de passo. Portanto, a partir da análise das 
+    características dos motores existentes e considerando a satisfação dos requisitos do projeto, custos limitados e o tempo 
+    hábil para a construção e integração do rover em questão, os motores para tração escolhidos foram motores de corrente contínua.
+    
+    Sendo assim, determinou-se o uso de dois desses motores para cada roda traseira, com transmissões independentes, 
+    sendo essas responsáveis pelo torque do veículo. Essa escolha é justificada pela possibilidade de um terreno arenoso, 
+    altamente úmido e frequentemente com imperfeições e desníveis.  A utilização destes dois motores garante que não haja 
+    atolamento e que o rover possa se locomover sem maiores dificuldades.
+
+    Para o seu dimensionamento, foram considerados alguns parâmetros iniciais, como massa de 16 kg e velocidade de 
+    deslocamento máxima de 2,7 m/s. Com isso, foi possível obter aproximadamente 7,5 N.m de torque e 50 W de potência. 
+    Para atender a essa demanda, optou-se por utilizar dois motores, um para cada lado, modelo Mabuchi GD – 558RC/LC 12 V. 
+    O qual possui 38 W e um torque máximo de 9,3 N.m.
+    
+    Com o intuito de controlar a direção do veículo, o servomotor de direção 1/10 e 1/8 HPI foi selecionado para 
+    orientar as rodas da frente, visto que o mesmo deverá realizar manobras de até 180 graus ao final de cada fileira 
+    de morangos, contornando para a próxima. Um motor de passo também poderia satisfazer essa aplicação, porém o custo 
+    elevado e a satisfatória associação do servomotor com sensores cumprem os requisitos no projeto.
+    
+     \subsubsection{Motores Elétricos para as Rodas}
+     
+     Algumas especificações devem ser observadas na seleção uma bateria, as mais importantes são a corrente e a 
+     tensão (MAGALHÃES, 2011 e SILVA, 2011).
+     
+     Os cálculos de autonomia para as baterias não são triviais, necessitam de muitos parâmetros. Na literatura não 
+     há uma formulação exata para calcular esses valores. Portanto, são usadas diversas aproximações e parâmetros mais 
+     relevantes são determinados (MEGGLIARO, 2006).
+
+     Três parâmetros principais que são apresentados: curva de descarga, a capacidade da bateria e a capacidade de 
+     descarga (MEGGLIARO, 2006).
+     
+     A curva de descarga representa o decaimento da tensão ao longo do consumo da capacidade nominal. O segundo parâmetro 
+     é a capacidade da bateria, o qual quantifica o tempo para que ocorra uma descarga total. Sua medida usual é Ah 
+     (Ampère x hora) (MEGGLIARO, 2006).
+     
+     A capacidade de descarga é quanto a bateria consegue fornecer sem que ocorra um superaquecimento, que poderia 
+     causar danos imensos a todo o projeto. Ela vem representada nas especificações pela letra C (MEGGLIARO, 2006).
+     
+     Alguns tipos de baterias poderiam ser selecionados para o projeto. A Bateria Íon- Lítio é o mais utilizado atualmente 
+     no mercado para aplicações em aparelhos eletrônicos, seu funcionamento consiste no uso de íons lítio presentes no 
+     eletrólito na forma sais dissolvidos em solventes não aquosos. Suas principais características são baixas taxas de auto 
+     descarga, longos ciclos de vida e segurança no manuseio (CASTILLO, 2002).
+     
+     Em segundo, a bateria de polímero de lítio possui seus eletrólitos contidos em um polímero, diferentemente das baterias 
+     de íon-lítio, em que os eletrólitos estão contidos em solventes. As baterias de polímero de lítio são baterias de tecnologia 
+     ultrafinas. Isso é possível devido a sua maior densidade de energia quando comparada com as baterias de íon- lítio.
+     
+     Por fim, as baterias de chumbo-ácido são baterias comumente utilizadas em arranques e iluminação para automóveis, 
+     sistemas de tração para veículos e máquinas elétricas, além de serem utilizadas como fontes alternativas em nobreaks. 
+     Sua composição é chumbo, que está presente na forma sólida e ácido sulfúrico, em concentração que varia de 27\% a 37\% 
+     (ANDRADE, 2005). Se apresentam em dois formatos: seladas e não seladas, sendo que nesta segunda existe a necessidade de 
+     reposição de água. São baterias recarregáveis, pesadas, têm vida útil de até quatro anos e possuem custo-benefício satisfatório.
+  
+     Para o correto dimensionamento, levantou-se o consumo dos componentes do veículo, como pode ser visto na tabela \ref{tabeladimensionamento}.
+  
+      \begin{table}[!htbp]
+      \centering
+      \caption{Tabela de dimensionamento de consumo dos componentes}
+      \label{tabeladimensionamento}
+      \begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+      \hline
+      Componente          & Corrente Máxima & Tensão Nominal \\\hline
+      Arduino             & 2 A             & 5 - 20 V       \\\hline
+      Raspberry           & 2 A             & 5 V            \\\hline
+      Driver              & 4 A cada        & 4-35 V         \\\hline
+      Motor DC Tração     & 2 A cada        & 12 V           \\\hline
+      Motor DC Perfuração & 2 A cada        & 12 V           \\\hline
+      Servomotor          & 2 A             & 6 V            \\\hline
+      \end{tabular}
+      \end{table}
+
+
+  
+  \subsection{Estrutura}
+ 
   \section{Localização e Informações}
 
   \section{Perfuração e Coleta}
