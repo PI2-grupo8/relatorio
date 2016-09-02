@@ -6,6 +6,9 @@
   \subsection{Tração}
   
     \subsubsection{Análise comparativa}
+    
+    Para a análise comparativa foram estudados e considerados as características dos principais tipo de sistemas de tração, 
+    afim de escolher um sistema que atenderá todas as necessidades do projeto sendo o menos oneroso.
   
       \subsubsubsection{Sistema de esteira}
       
@@ -156,8 +159,29 @@
       \end{tabular}
       \end{table}
 
-
-  
+      Um ponto importante é observar que como os motores estarão conectados aos seus respectivos drivers de controle as 
+      correntes máximas são limitadas por eles. Como serão dois drivers de controle, a corrente máxima necessária será de 
+      14 A. Portanto, para 1 hora de operação em carga máxima, será necessário uma bateria de 14 Ah. Optou-se pelo modelo Get 
+      Power gp12-14, ela possui 12 V e 14 Ah.
+      
+      Para recarregar a bateria foi cogitado a utilização de um painel solar. Porém, a placa solar possui dimensões maiores 
+      que a estrutura do carro e um baixo ganho energético, em torno de apenas 3\%, o que não viabiliza a sua aplicação nesse 
+      projeto.
+      
+      \subsubsection{Circuito Elétrico}
+      
+      O diagrama \ref{diagramaunifilar} unifilar apresentado a seguir representa as ligações a serem realizadas entre os componentes que serão utilizados. 
+      Após a bateria, será colocado um disjuntor monopolar (no ponto D) de 17,5 A de corrente alternada. Apesar de não ser de 
+      corrente contínua, ele satisfaz os requisitos de operação. Para o Arduino e para a Raspberry determinou-se dois fusíveis 
+      (F1 e F2) de 3 A.
+      
+      \begin{figure}[!htbp]
+	\centering
+	\label{diagramaunifilar}
+	  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/diagramaunifilar.eps}
+	\caption{Diagrama Unifilar dos Componentes}
+      \end{figure}
+      
   \subsection{Estrutura}
  
   \section{Localização e Informações}
