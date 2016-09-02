@@ -15,12 +15,7 @@ FIXOS_SOURCES = informacoes.tex novosComandos.tex fichaCatalografica.tex \
 FIXOS_FILES = $(addprefix $(FIXOS_DIR)/, $(FIXOS_SOURCES))
 
 EDITAVEIS_DIR = editaveis
-EDITAVEIS_SOURCES = informacoes.tex errata.tex dedicatoria.tex \
-					agradecimentos.tex epigrafe.tex resumo.tex abstract.tex \
-					abreviaturas.tex simbolos.tex introducao.tex \
-					aspectosgerais.tex consideracoes.tex textoepostexto.tex \
-					elementosdotexto.tex elementosdopostexto.tex \
-					apendices.tex anexos.tex
+
 
 EDITAVEIS_FILES = $(addprefix $(EDITAVEIS_DIR)/, $(EDITAVEIS_SOURCES))
 
@@ -34,9 +29,9 @@ SOURCES = $(FIXOS_FILES) $(EDITAVEIS_FILES)
 
 .PHONY: all clean dist-clean
 
-all: 
+all:
 	@make $(TARGET)
-     
+
 $(TARGET): $(MAIN_FILE) $(SOURCES) bibliografia.bib
 	$(LATEX) $(MAIN_FILE) $(SOURCES)
 	$(BIBTEX) $(AUX_FILE)
@@ -50,7 +45,7 @@ clean:
 	rm -f *~ *.dvi *.ps *.backup *.aux *.log
 	rm -f *.lof *.lot *.bbl *.blg *.brf *.toc *.idx
 	rm -f *.pdf
-	
+
 dist: clean
 	tar vczf tcc-fga-latex-$(VERSION).tar.gz *
 
