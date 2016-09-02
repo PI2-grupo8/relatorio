@@ -82,7 +82,7 @@
   para adquirir dados do solo. Essa tecnlogia se chama LIBS (Espectroscopia de
   emissão óptica com plasma induzido por laser), onde um laser de alta energia
   é focalizado sobre o solo, fazendo com que seja formado um plasma.
-  Esse plasma realiza uma análise multielementar do solo, \cite{ARCHILA2014}.
+  Esse plasma realiza uma análise multielementar do solo \cite{ARCHILA2014}.
 
   \begin{figure}[h]
     \centering
@@ -91,9 +91,38 @@
     \caption{Rover desenvolvido pela EMPRAPA com tecnologia LIBS. Fonte: \cite{ARCHILA2014}}
   \end{figure}
 
+  Este rover utiliza dois motores de corrente direta (DC) BTS7960 Arduino, três
+  baterias de 12 Volts e 7 Ampére-hora, um conversor 3,3-5 Volts, e a arquitetura
+  é formada por um microcontrolador Raspberry-pi, encarregado de enviar sinais
+  de controle para o sistema de propulsão, além de ter os motores ligados a um
+  Arduino UNO, encarregado de gerar sinais de PWM (Pulse-width modulation),
+  controlando assim o sentido de giro dos motores e suas velocidades \cite{ARGOTE2014}.
+
   \section{Justificativa}
 
+  Um sistema de monitoramento da umidade do solo envolve o desenvolvimento de
+  técnicas de medição específicas para cada cenário de plantio. Esse tipo de
+  monitoramento, além de reduzir custos com desperdício de recursos hídricos,
+  podem melhorar significativamente as condições de plantio provendo um aumento
+  nos níveis de produtividade e consequentemente uma melhora na qualidade do
+  produto final. 
+
+  Algumas soluções foram encontradas e estudadas, a exemplo do projeto
+  desenvolvido pela EMBRAPA, que utiliza tecnologia de laser LBS, mas que deixa
+  a desejar em aspectos de viabilidade financeira e comercial. Visto que não
+  foram encontradas soluções desenvolvidas a nível de mercado com as mesmas
+  características do projeto proposto, esse trabalho tem o objetivo de atacar
+  de maneira viável a operação e controle de umidade em uma lavoura de morangos
+  através de um dispositivo relativamente barato e eficiente no que tange a seus
+  objetivos operacionais e benefícios para a produção agropecuária.
+   
+  Após a validação de requisitos, análise do tempo disponível, custos e propostas
+  de soluções, foi possível concluir que o projeto é viável, tanto de um ponto
+  de vista técnico.
+
   \section{Objetivos}
+
+
   \subsection{Geral}
   \subsection{Específicos}
 
