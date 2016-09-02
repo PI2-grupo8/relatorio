@@ -6,4 +6,95 @@
     \subsection{Tempo}
 
   \section{Riscos}
-  
+
+  A probabilidade e os impactos do riscos para o projeto classificam-se conforme a tabela abaixo:
+
+  \begin{table}[]
+    \centering
+    \caption{Relação Probabilidade x Impacto}
+    \label{probabilidadeximpacto}
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Probalidade} & \textbf{\% de certeza} & \textbf{Impacto} \\ \hline
+    Baixa                & 0 - 30                 & Pequeno          \\ \hline
+    Média                & 31 - 60                & Regular          \\ \hline
+    Alta                 & 61 - 100               & Alto             \\ \hline
+    \end{tabular}
+  \end{table}
+
+  O impacto dos riscos foram divididos em 3 níveis, onde:
+
+  \begin{itemize}
+    \item Pequeno: consiste em um risco que afetará pouco o projeto, sua ocorrência não deve interferir no cronograma ou no
+    custo do projeto.
+    \item Regular: consiste em um risco que afetará consideravelmente o andamento do projeto, podendo atrasar datas referentes
+    aos sub-processos de um pacote de trabalho no cronograma, as quais refletirão diretamente no custo do projeto.
+    \item Alto: consiste em um risco de alto impacto ao projeto, sua ocorrência pode atrasar entregas de um ponto de controle,
+    comprometer completamente um pacote de trabalho ou até mesmo a interação entre a equipe. Estratégias de prevenção deverão
+    ser realizadas imediatamente.
+  \end{itemize}
+
+  Para uma maior visualização do quão crítico pode ser um risco, realizou-se a Matriz de Probabilidade e Impacto:
+
+  \begin{table}[]
+    \centering
+    \caption{Relação Impacto / Probabilidade}
+    \label{impactoporprobabilidade}
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{Impacto / Probabilidade} & \textbf{Baixa} & \textbf{Média} & \textbf{Alta} \\ \hline
+    Pequeno                          & Baixo          & Baixo          & Médio         \\ \hline
+    Regular                          & Baixo          & Médio          & Alto          \\ \hline
+    Alto                             & Médio          & Alto           & Alto          \\ \hline
+    \end{tabular}
+  \end{table}
+
+  Segundo Scofano (2012) ******, as estratégias para resposta de ameaças à um projeto podem ser classificadas da seguinte maneira:
+
+  \begin{itemize}
+    \item Evitar: modificar o plano de projeto para eliminar o risco, a condição ou proteger os objetivos do projeto destes
+    impactos. Mesmo sabendo que não existe a possibilidade de se eliminarem todos os eventos de risco, alguns riscos
+    específicos, porém, podem ser evitados.
+    \item Transferir: alterar a consequência de um risco para uma terceira parte juntamente com a responsabilidade de
+    resposta. Essa estratégia não elimina o risco, apenas transfere sua responsabilidade para outra parte.
+    \item Mitigar: reduzir a probabilidade e/ou consequências de um evento de risco adverso para um nível aceitável. Procura
+    realizar ações preventivas para que não tenha consequências a serem reparadas.
+    \item Aceitar: incluir um plano de contingência a ser executado quando da ocorrência de um. Esta técnica indica que a equipe
+    não fará alterações no plano do projeto para negociar com um risco ou que não há resposta adequada.
+  \end{itemize}
+
+  Além das ameaças, também existem as estratégias para eventos que possam ser benéficos ao projeto, as quais são:
+
+  \begin{itemize}
+    \item Explorar: utilizar para riscos com impacto positivo, caso exista a necessidade de garantir a oportunidade pela organização.
+    \item Compartilhar: alocar integral ou parcialmente a propriedade da oportunidade a um terceiro que detenha maior
+    capacidade de gerir determinada oportunidade para benefício do projeto.
+    \item Melhorar: empregar para aumento de probabilidade e/ou impactos positivos de uma possível oportunidade.
+    \item Aceitar: aproveitar uma devida oportunidade sem que haja alocação de esforços dos recursos do projeto.
+  \end{itemize}
+
+  Para a identificação dos riscos foram realizados brainstormings entre a equipe, objetivando uma maior transparência
+  e alertas sobre os riscos em si. Os riscos do projeto encontram-se na tabela à seguir:
+
+  \begin{table}[]
+    \centering
+    \caption{My caption}
+    \label{my-label}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Risco}                                      & \textbf{Efeito}                                                            & \textbf{Impacto} & \textbf{Probabilidade} & \textbf{Criticidade} & \textbf{Ação}                                                                                                                                        & \textbf{Estratégia} \\ \hline
+    Descompromisso de membros da equipe                 & Não cumprimento das atividades e sobrecarga sobre outros membros da equipe & Regular          & Média                  & Médio                & Conversar com o integrante e oferecer suporte para as dificuldades                                                                                   & Mitigar             \\ \hline
+    Não cumprimento do cronograma                       & Valor de negócio será inferior ao planejado                                & Regular          & Média                  & Médio                & Ajustar cronograma para o trabalho que foi acumulado                                                                                                 & Mitigar             \\ \hline
+    Erro na estimativa/planejamento do projeto          & Não entrega do produto no tempo previsto                                   & Grande           & Média                  & Alto                 & Reavaliar o escopo e redimensionar o projeto                                                                                                         & Mitigar             \\ \hline
+    Necessidade de trabalhar mais horas que o planejado & Cansaço na equipe e redução na qualidade do produto                        & Regular          & Média                  & Médio                & Marcar reuniões com a sub-equipe para melhoria do desempenho                                                                                         & Aceitar             \\ \hline
+    Inexperiência para a construção da solução          & Não conseguir entregar o produto e redução na qualidade do produto         & Regular          & Alta                   & Alto                 & Marcar reuniões com profissionais especialistas, alunos que já tiveram contato com a temática e procurar artigos acadêmicos relacionados ao assunto. & Mitigar             \\ \hline
+    Integrante desistir da disciplina                   & Sobrecarga de trabalho aos outros integrantes                              & Médio            & Baixa                  & Baixo                & Redistribuir as tarefas do entregante pela equipe                                                                                                    & Aceitar             \\ \hline
+    Requisitos se alterarem                             & Mudanças grandes no planejamento e estruturação do projeto                 & Grande           & Média                  & Alto                 & Replanejar o escopo do projeto                                                                                                                       & Mitigar             \\ \hline
+    Danificação inesperada de componentes               & Não possuir material disponível para execução do projeto                   & Regular          & Baixa                  & Baixo                & Possuir componentes em estoque                                                                                                                       & Mitigar             \\ \hline
+    Disponibilidade do local para testes                & Entregar o produto sem testes efetivos                                     & Grande           & Baixa                  & Médio                & Reservar o local com antecedência                                                                                                                    & Mitigar             \\ \hline
+    Atraso na obtenção dos componentes                  & Atraso no cronograma e sobrecarga de trabalho                              & Grande           & Baixa                  & Médio                & Priorizar especificação e compra de componentes                                                                                                      & Mitigar             \\ \hline
+    Integrantes com conhecimento além do esperado       & Impulsionamento da execução do projeto                                     & Grande           & Baixa                  & Médio                & Fazer com que o membro aplique e compartilhe bem o conhecimento                                                                                      & Explorar            \\ \hline
+    \end{tabular}%
+    }
+  \end{table}
