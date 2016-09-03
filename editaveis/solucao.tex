@@ -264,9 +264,45 @@
   \end{itemize}
   
  
-  \section{Localização e Informações}
 
-  \section{Perfuração e Coleta}
+  \section{Perfuração e Coleta das Variáveis}
+
+  \subsection{Sensor de Umidade e Temperatura do Ar}
+
+  O sensor escolhido para realizar as medições referentes à umidade relativa e
+  temperatura do ar foi o Aosong DHT11. Seu elemento sensor de temperatura é um
+  termistor do tipo NTC e o sensor de Umidade é do tipo HR202, o circuito interno
+  faz a leitura dos sensores e se comunica a um microcontrolador através de um
+  sinal serial de uma via.% [DATASHEET, especificar].  
+ 
+  A escolha do elemento foi motivada por diversos fatores. Primeiramente a
+  adequação do sensor às faixas de medição do ambiente, tanto em umidade
+  relativa, quanto em temperatura. Além disso, o elemento apresenta precisão de
+  medição e tempo de resposta adequados para a aplicação.  Por fim, a
+  possibilidade de realizar medições de dois parâmetros com apenas um sensor
+  mantendo a garantia de confiabilidade e estabilidade a longo prazo. 
+
+  \begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[keepaspectratio=true,scale=0.1]{figuras/dht-11.eps}
+  \caption{\label{DHT11}Sensor de umidade relativa e temperatura do ar}
+  \end{center}
+  \end{figure}
+ 
+  \subsection{Sensor de Umidade do Solo}
+
+  O sensor escolhido para a medição da umidade do solo foi o HL-69, tanto pelo baixo custo quanto pelo simples processo de medição. Ele tem como princípio de medição a queda de tensão resultante da passagem de corrente por uma malha resistiva, que no caso seria o solo umedecido. (Referência)
+ 
+  O sensor é constituído por duas linhas de eletrodos que estão sobrepostas a duas placas com terminações pontiagudas para facilitar a penetração do sensor no solo. Uma corrente é injetada em uma das linhas de eletrodos e é medida a queda tensão entre as linhas, que é função da resistência entre os eletrodos que por sua vez é função da quantidade de água e minerais presentes entre os eletrodos. Quando o volume de água no solo entre os eletrodos é baixo, ou seja, quando o solo está seco, a queda de tensão será maior, e quando o solo está umedecido, a queda de tensão é menor.
+ 
+  Devido ao seu princípio de operação, este sensor mede a quantidade de água no solo de forma indireta, e a calibração do sensor vai de acordo com o que é definido como um solo seco ou úmido em um local, e portanto se faz necessária a calibração do equipamento em campo junto ao responsável pela irrigação.
+
+  \begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[keepaspectratio=true,scale=0.3]{figuras/higrometer.eps}
+  \caption{\label{DHT11}Sensor de umidade do solo}
+  \end{center}
+  \end{figure}
 
   \subsection{Análise dos Sistemas de Perfuração}
 
@@ -299,4 +335,22 @@
   Já para a extensão do sensor para o solo, será utilizado o servo motor Tower
   Pro Mg90s Metal Gear, tendo como base o torque de 2,2 Kg/cm quando operado na faixa de 6V.
 
-  \section{Tração, Energia e Estrutura}
+  \section{Localização e Informações}
+
+  \subsection{Análise Comparativa}
+
+   Sabendo-se que o plantio do morango utiliza o arranjo de fileiras, foram analisadas algumas possíveis soluções referentes à locomoção do veículo em tal ambiente.
+
+  \subsubsection{Processamento de Imagens}
+
+  Processamento de imagens consiste em uma técnica para a análise de dados multidimensionais, que permite manipular e tratar imagens com objetivo de obter informações e melhorar as características visuais da imagem.  A primeira etapa consiste em adquirir uma imagem, por exemplo, através de uma câmera digital, de um scanner laser, de um ultrassom, de um ressonador magnético, ou por qualquer outro meio. Após a captura, uma imagem precisa ser representada de forma apropriada para tratamento computacional, ou seja, sua representação se dará como uma função bidimensional ou tridimensional. Feito isso, inicia-se o pré-processamento da imagem. Nessa etapa a imagem passa por um processo de filtragem, no qual são eliminados os ruídos, que podem ser obtidos durante a captura da imagem, melhorando assim a qualidade e permitindo uma melhor discriminação dos objetos presentes na mesma.
+ 
+  Pelo curto tempo destinado ao desenvolvimento do projeto e a falta de conhecimento da equipe sobre o assunto, a escolha por processamento de imagens acabou sendo descartada pelo seu alto grau de risco ao projeto.
+
+  \subsubsection{Localização por meio GPS}
+
+  O sistema de posicionamento global (GPS) é uma tecnologia para navegação em ambientes externos. O GPS foi desenvolvido pelo Departamento de Defesa Americano, sendo composto por um conjunto de satélites que transmitem um sinal de rádio-freqüência codificado. Usando-se métodos de trilaterização avançados, receptores no solo podem medir as suas posições baseado no tempo de viagem dos sinais de rádio-freqüência dos satélites, permitindo o cálculo da latitude, longitude e altitude do receptor.
+ 
+O principal problema de se usar marcos naturais do ambiente na navegação é detectar e combinar as características dos marcos a partir das informações dos sensores. A escolha natural do sensor para esta tarefa é a visão computacional. A maior parte dos marcos naturais do ambiente baseados em visão são longas bordas verticais, como portas, junções de paredes e luzes no teto.
+ 
+Pelo local da plantação ser um ambiente de tamanho de visibilidade baixa e possuir características específicas da plantação, a localização por GPS se torna insatisfatória para o projeto, uma vez que erros refentes à precisão podem acarretar em um comprometimento da plantação por parte do veículo.
