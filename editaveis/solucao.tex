@@ -354,3 +354,15 @@
 O principal problema de se usar marcos naturais do ambiente na navegação é detectar e combinar as características dos marcos a partir das informações dos sensores. A escolha natural do sensor para esta tarefa é a visão computacional. A maior parte dos marcos naturais do ambiente baseados em visão são longas bordas verticais, como portas, junções de paredes e luzes no teto.
  
 Pelo local da plantação ser um ambiente de tamanho de visibilidade baixa e possuir características específicas da plantação, a localização por GPS se torna insatisfatória para o projeto, uma vez que erros refentes à precisão podem acarretar em um comprometimento da plantação por parte do veículo.
+
+ \section{Informações}
+   \subsection{Armazenamento de dados}
+Os dados serão armazenados no cartão de memória da Raspberry Pi em um arquivo no formato CSV (Comma Separated Value). Os dados serão dispostos em colunas com a seguinte ordem: posição da medição em metros, umidade do solo, umidade relativa do ar e temperatura do ambiente.
+Os dados dispostos desta maneira facilitam o processamento e análise posterior, assim como sua apresentação gráfica para o operador.
+   \subsection{Leitura das informações}
+
+Uma parte importante do o projeto consiste na apresentação dos dados para o gestor da lavoura. Foi definido que para esse fim, a solução será uma aplicação, feita na linguagem Ruby com o auxílio do framework Rails, que é um framework para desenvolvimento de aplicações web.
+A escolha de desenvolver utilizando-se essa linguagem junto a esse framework foi feita com base na facilidade que essa tecnologia fornece para o desenvolvimento e com base na experiência da equipe responsável pelo desenvolvimento da aplicação, visto que todos os desenvolvedores já possuem experiência com a tecnologia escolhida.
+Em concordância com os requisitos estabelecidos, essa aplicação permitirá o upload do arquivo CSV gerado pelo veículo, dentro de uma área restrita da aplicação, disponível apenas após a realização do login.
+Após a realização do upload, o usuário possuirá a opção de visualizar os dados de forma gráfica, sendo que a visualização gráfica se dará com base em um heatmap (mapa de calor) para uma melhor representação da lavoura.
+Além da representação gráfica, o gestor da lavoura poderá obter esses dados em formato de relatório, sendo permitida sua exportação para um arquivo PDF (Portable Document Format).
