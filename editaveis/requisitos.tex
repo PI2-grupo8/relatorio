@@ -1,29 +1,13 @@
 \chapter{Requisitos}
 
-  Tendo em vista a necessidade de um entendimento comum acerca da solução que o projeto deve fornecer e da necessidade de uma
-  posterior verificação da completude desta solução, foram definidos os seguintes requisitos, sendo estes relativos às diversas
-  áreas abrangidas pelo projeto.
+  Tendo em vista a concepção e validação da solução, foram definidos os seguintes
+  requisitos, sendo estes relativos aos subsistemas do projeto.
 
-  \section{Configuração}
-
-    \begin{itemize}
-      \item O veículo deverá permitir a inserção do número de coletas a serem feitas.
-      \item O veículo deverá permitir a inserção da distância máxima a ser percorrida.
-      \item O veículo deverá permitir a inserção do número de canteiros a serem percorridos.
-    \end{itemize}
-
-  \section{Movimentação}
+  \section{Mecânica e Alimentação}
 
     \begin{itemize}
-      \item O veículo deverá permitir a movimentação entre as fileiras de morangueiros sem colisão.
       \item O veículo deverá permitir a movimentação em terrenos irregulares.
-      \item O veículo deverá permitir a coleta nos pontos de medição definidos.
       \item O veículo deverá permitir a manutenção de uma velocidade constante e pré-determinada.
-    \end{itemize}
-
-  \section{Estrutura, Energia e Tração}
-
-    \begin{itemize}
       \item O veículo deverá possuir dimensões capazes de acomodar os componentes internos definidos no projeto.
       \item O veículo deverá possuir uma largura inferior ao caminho pré-definido para sua movimentação.
       \item O veículo deverá possuir na composição de sua estrutura materiais maleáveis, leves e resistentes à corrosão e à esforços.
@@ -33,34 +17,25 @@
       \item O veículo deverá possuir uma bateria com uma capacidade suficiente para suprir o gasto energético do motor e demais componentes.
       \item O veículo deverá possuir um motor com torque suficiente para garantir sua movimentação.
       \item O veículo deverá possuir uma autonomia suficiente para realizar a coleta de dados nos canteiros e retornar para a origem.
-      \item O veículo deverá possuir um sistema de segurança que garanta sua confiabilidade.
+      \item O veículo deverá possuir um revestimento resistente a respingos de água.
     \end{itemize}
 
   \section{Perfuração e Coleta}
 
     \begin{itemize}
-      \item O sistema de perfuração deverá permitir um furo de diâmetro compatível com o sensor escolhido para a coleta dos dados de umidade.
-      \item O sistema de perfuração deverá permitir um furo para a coleta em um ângulo diagonal.
-      \item O sistema de perfuração deverá permitir um furo com profundidade suficiente para realizar a coleta próximo as raízes.
-      \item O sistema de perfuração deverá possuir potência suficiente para que o solo seja perfurado até a distância especificada.
-      \item O sistema de perfuração deverá possuir um suporte resistente para a proteção do sensor.
-      \item O sistema de perfuração deverá permitir a perfuração do plástico protetor das raízes.
+      \item O veículo deverá realizar a leitura e envio de dados referentes a umidade do solo, umidade relativa do ar e temperatura do ambiente nos pontos de medição definidos.
+      \item O veículo deverá permitir a inserção do número de canteiros a serem percorridos.
+      \item O sistema de perfuração deverá ser capaz de realizar uma perfuração no plástico protetor das raízes e introduzir o sensor de umidade no solo
+      \item O sistema de perfuração deverá garantir a integridade do sensor.
     \end{itemize}
 
-    \subsection{Coleta e Transferência dos Dados}
+    \subsection{Localização e Informações}
 
       \begin{itemize}
-        \item O sistema de coleta de dados deverá possuir sensores capazes de coletar dados sobre a umidade do solo, umidade relativa do ar e temperatura do ambiente.
-        \item O sistema de coleta de dados deverá possuir sensores compatíveis com Arduino.
-        \item O sistema de coleta de dados deverá possuir um sensor capaz de variar o sinal de saída em função da umidade relativa do solo.
-        \item O sistema de coleta de dados deverá possuir um sensor capaz de variar o sinal conforme a variação da umidade do ar e temperatura, dentro dos limites de variação da temperatura ambiente.
+        \item O veículo deverá realizar seu percurso.
+        \item O veículo deverá permitir a inserção do número de coletas a serem feitas.
+        \item O veículo deverá permitir a movimentação entre as fileiras de morangueiros sem colisão.
         \item O sistema de coleta de dados deverá possuir sensores de geolocalização e inerciais que auxiliem na movimentação autônoma.
-        \item O sistema de coleta de dados deverá permitir o armazenamento dos dados de forma segura e confiável.
-      \end{itemize}
-
-    \subsection{Apresentação dos Dados}
-
-      \begin{itemize}
         \item O sistema de apresentação dos dados deverá permitir a autenticação do usuário (login).
         \item O sistema de apresentação dos dados deverá permitir o upload e leitura do arquivo proveniente do veículo.
         \item O sistema de apresentação dos dados deverá permitir a apresentação dos dados lidos para o usuário de forma gráfica.
