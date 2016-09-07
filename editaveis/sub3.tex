@@ -1,0 +1,100 @@
+\section{Subsistema: Localização e Informações}
+
+  \subsection{Adaptação do Ambiente}
+
+  Sabendo-se que o plantio do morango utiliza o arranjo de fileiras,
+  foram analisadas algumas possíveis soluções referentes à locomoção do veículo em tal ambiente.
+
+ \begin{itemize}
+
+ \item Processamento de Imagens
+
+ Processamento de imagens consiste em uma técnica para a análise de dados
+multidimensionais, que permite manipular e tratar imagens com objetivo de
+obter informações e melhorar as características visuais da imagem.
+A primeira etapa consiste em adquirir uma imagem, por exemplo,
+através de uma câmera digital, de um scanner laser, de um ultrassom,
+de um ressonador magnético, ou por qualquer outro meio. Após a captura,
+ uma imagem precisa ser representada de forma apropriada para tratamento
+ computacional, ou seja, sua representação se dará como uma função
+ bidimensional ou tridimensional. Feito isso, inicia-se o pré-processamento
+  da imagem. Nessa etapa a imagem passa por um processo de filtragem,
+  no qual são eliminados os ruídos, que podem ser obtidos durante a
+  captura da imagem, melhorando assim a qualidade e permitindo uma melhor
+  discriminação dos objetos presentes na mesma.
+
+ Pelo curto tempo destinado ao desenvolvimento do projeto e a falta de
+ conhecimento da equipe sobre o assunto, a escolha por processamento de
+  imagens acabou sendo descartada pelo seu alto grau de risco ao projeto.
+
+ \item Localização por meio GPS
+
+ O sistema de posicionamento global (GPS) é uma tecnologia
+ para navegação em ambientes externos. O GPS foi desenvolvido
+ pelo Departamento de Defesa Americano, sendo composto por um conjunto
+ de satélites que transmitem um sinal de rádio-freqüência codificado.
+ Usando-se métodos de trilaterização avançados, receptores no solo podem
+  medir as suas posições baseado no tempo de viagem dos sinais de
+  rádio-freqüência dos satélites, permitindo o cálculo da latitude,
+  longitude e altitude do receptor.
+
+O principal problema de se usar marcos naturais do ambiente na
+navegação é detectar e combinar as características dos marcos
+ a partir das informações dos sensores. A escolha natural do sensor
+ para esta tarefa é a visão computacional. A maior parte dos marcos
+ naturais do ambiente baseados em visão são longas bordas verticais,
+como portas, junções de paredes e luzes no teto.
+
+Pelo local da plantação ser um ambiente de tamanho de visibilidade
+baixa e possuir características específicas da plantação, a localização
+por GPS se torna insatisfatória para o projeto, uma vez que erros
+referentes à precisão podem acarretar em um comprometimento da plantação
+por parte do veículo.
+
+
+\item Localização por Sensoriamento
+
+As abordagens estudadas que podem resolver o problema da localização
+basearam-se no sensoriamento infravermelho e ultrassônico.
+Dado as condições da lavoura de morango ambos poderiam ser
+aplicados como um problema referente à Wall follower.
+
+Wall follower é a regra mais conhecida para percurso em labirintos,
+também conhecido como regra da mão direita ou esquerda.
+Ela é válida para percursos conexos, onde todas as paredes são
+ligadas entre si, mantendo a mão próxima a parede do labirinto em
+que se inclui, garantindo assim que o corpo não se perca e finalize o percurso. O principal problema desta regra ocorre quando um percurso possui loops de passagens que projetem uma trajetória sem fim.
+
+
+\item \textit{Wall Follower}
+
+A solução adotada para o projeto baseou-se na utilização de sensores
+infravermelho, pois atendiam os requisitos com maior simplicidade,
+menor custo técnico e computacional.
+
+Todavia, devido as soluções adotadas para tração, movimentação das
+rodas e perfuração (realizada somente pelo lado direito do veículo),
+serão necessárias algumas modificações no ambiente de plantio para modelagem
+do sistema como um cenário “Wall Follower” citado acima.
+
+Para que o veículo seja capaz de percorrer todas as fileiras sem passar
+ pelo mesmo caminho de maneira redundante, foi pensada a adição de
+ estruturas à lavoura para montar uma espécie de circuito. O esquemático
+  abaixo representa a estrutura da lavoura e o caminho a ser percorrido pelo
+   veículo que irá seguir sempre a parede à sua direita até completar todo o
+   percurso.
+
+   Para a escolha do material ponderou-se necessidade de um material
+   barato e de fácil instalação/manuseio. Desta forma, o plástico e
+   a madeira foram os materiais escolhidos para compor os obstáculos
+   que irão ajudar o veículo a percorrer o trajeto.
+
+\end{itemize}
+
+  \subsection{Sensoriamento: Localização}
+
+  \subsection{Algoritmo de Localização}
+
+  \subsection{Armazenamento dos Dados}
+
+  \subsection{Leitura das Informações}
