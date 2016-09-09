@@ -2,6 +2,34 @@
 
   \subsection{Sistema de Perfuração}
 
+  \textbf{Opção A}: Usar uma broca para perfurar o plástico e a terra, ao completar este
+  processo, um dispositivo é acionado para realizar a troca da peça broca para
+  a peça sensor, o sensor de umidade é então estendido até o solo do buraco e
+  coleta os dados solicitados. Após a coleta dos dados o sensor é recolhido e o
+  carrinho segue em frente para mais uma perfuração.
+
+  \textbf{Opção B}: Usar um tubo puntiforme contendo o sensor, havendo na ponta do tubo
+  aberturas levemente maiores que as dimensões dos terminais do sensor. O tubo
+  terá um motor para empurrá-lo até a lona e fazer o furo desejado; um servo
+  motor estenderá o sensor para que ele possa fazer a medição da umidade.
+
+  O grupo optou pela opção B pelos seguintes fatores:
+
+  \begin{itemize}
+    \item Dificuldade em elaborar um mecanismo para alternar a broca e o sensor
+    conforme descrito na opção A;
+    \item Relativa facilidade em perfurar o solo devido a sua baixa compactabilidade
+    \item Diminuição da quantidade de atuadores necessários.
+  \end{itemize}
+
+  O motor definido para uso no sistema de perfuração também será o
+  Mabachi GD - 558RC/LC 12V, tendo em vista que seu torque máximo supre as
+  condições de resistência que o solo pode impor.
+
+  Já para a extensão do sensor para o solo, será utilizado o servo motor Tower
+  Pro Mg90s Metal Gear, tendo como base o torque de 2,2 Kg/cm quando operado na faixa de 6V.
+  \subsection{Sensoriamento: Coleta}
+
   \begin{itemize}
 
   \item Sensor de Umidade e Temperatura do Ar
@@ -66,53 +94,22 @@
   para dar suporte ao microcontrolador. A figura~\ref{fig:arduino} apresenta a placa
   Arduino Mega2560.
 
-\begin{figure}[!htbp]
-\begin{center}
-\includegraphics[width=.6\textwidth]{figuras/arduino.eps}
-\caption{\label{fig:arduino}Arduino Mega2560.}
-\end{center}
-\end{figure}
+  \begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[width=.6\textwidth]{figuras/arduino.eps}
+  \caption{\label{fig:arduino}Arduino Mega2560.}
+  \end{center}
+  \end{figure}
 
-\newpage
+  \newpage
 
-A escolha da placa foi motivada por diversos fatores.
-Primeiramente, ela é capaz de realizar as demandas de controle do
-veículo, bem como possui um número de portas adequado. Além disso,
-é relativamente barata se comparada a outras plataformas de
-microcontroladores. Seu software é multiplataforma, proporcionando
-a interface com o Linux e possui um ambiente de programação simples,
-claro e bastante familiar.
+  A escolha da placa foi motivada por diversos fatores.
+  Primeiramente, ela é capaz de realizar as demandas de controle do
+  veículo, bem como possui um número de portas adequado. Além disso,
+  é relativamente barata se comparada a outras plataformas de
+  microcontroladores. Seu software é multiplataforma, proporcionando
+  a interface com o Linux e possui um ambiente de programação simples,
+  claro e bastante familiar.
 
 
   \end{itemize}
-
-
-
-  \subsection{Sensoriamento: Coleta}
-
-  \textbf{Opção A}: Usar uma broca para perfurar o plástico e a terra, ao completar este
-  processo, um dispositivo é acionado para realizar a troca da peça broca para
-  a peça sensor, o sensor de umidade é então estendido até o solo do buraco e
-  coleta os dados solicitados. Após a coleta dos dados o sensor é recolhido e o
-  carrinho segue em frente para mais uma perfuração.
-
-  \textbf{Opção B}: Usar um tubo puntiforme contendo o sensor, havendo na ponta do tubo
-  aberturas levemente maiores que as dimensões dos terminais do sensor. O tubo
-  terá um motor para empurrá-lo até a lona e fazer o furo desejado; um servo
-  motor estenderá o sensor para que ele possa fazer a medição da umidade.
-
-  O grupo optou pela opção B pelos seguintes fatores:
-
-  \begin{itemize}
-    \item Dificuldade em elaborar um mecanismo para alternar a broca e o sensor
-    conforme descrito na opção A;
-    \item Relativa facilidade em perfurar o solo devido a sua baixa compactabilidade
-    \item Diminuição da quantidade de atuadores necessários.
-  \end{itemize}
-
-  O motor definido para uso no sistema de perfuração também será o
-  Mabachi GD - 558RC/LC 12V, tendo em vista que seu torque máximo supre as
-  condições de resistência que o solo pode impor.
-
-  Já para a extensão do sensor para o solo, será utilizado o servo motor Tower
-  Pro Mg90s Metal Gear, tendo como base o torque de 2,2 Kg/cm quando operado na faixa de 6V.
