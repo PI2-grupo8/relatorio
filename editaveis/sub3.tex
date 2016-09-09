@@ -94,20 +94,17 @@ como serão processados e armazenados os dados coletados das medições.
 
   \subsubsection{Unidade de Processamento}
 
-  Para processamento das informações e con
-  A unidade de processamento escolhida foi o Raspberry Pi B+,
-  devido a sua robustez. Esta unidade conta com o microprocessador
-  BCM2835 da Broadcom, que é baseado no ARM1176JZFS com clock de
+  Para processamento das informações foi
+  escolhida foi o Raspberry Pi B+,
+  É uma unidade robusta que conta com o microprocessador
+  BCM2835 da Broadcom, com clock de
   700MHz e modo de baixo consumo, uma GPU Dual Core VideoCore
   IV\textregistered, SDRAM de 512MB, 4 portas USB, 1 porta RJ45
   (Ethernet), 1 porta HDMI e 40 pinos para GPIO~\cite{raspref}
 
-  Esta unidade terá um sistema operacional Linux embarcado e
-  servirá para armazenar os dados obtidos pelos sensores, para
-  as decisões do controle do veículo, para o armazenamento dos
-  parâmetros iniciais de posicionamento e pontos de coleta de
-  dados, assim como para o cálculo do posicionamento e passagem
-  dos dados para a base.
+  Esta unidade terá um sistema operacional Linux embarcado, responsável
+  por gerenciar o armazenamento dos dados obtidos pelos sensores e
+  processar decisões do controle do veículo.
 
   \begin{figure}[!htbp]
   \begin{center}
@@ -143,19 +140,18 @@ como serão processados e armazenados os dados coletados das medições.
   análise posterior, assim como sua apresentação gráfica para
   o operador.
 
-  \subsubsection{Leitura das Informações}
+  \subsubsection{Apresentação das Informações}
 
-  Uma parte importante do o projeto consiste na apresentação dos
-  dados para o gestor da lavoura. Foi definido que para esse fim,
-  a solução será uma aplicação, feita na linguagem Ruby com o
-  auxílio do \textit{framework} Rails, que é um \textit{framework}
-  para desenvolvimento de aplicações web.
+  Uma parte importante do projeto consiste na apresentação dos
+  dados para o usuário encarregado pela gestão da lavoura. Para essa demanda,
+  foi definido o desenvolvimento de uma aplicação web, utilizando
+  o \textit{framework} Rails.
+
   A escolha de desenvolver utilizando-se essa linguagem junto a
   esse \textit{framework} foi feita com base na facilidade que essa
   tecnologia fornece para o desenvolvimento e com base na experiência
   da equipe responsável pelo desenvolvimento da aplicação, visto que
-  todos os desenvolvedores já possuem experiência com a tecnologia
-  escolhida.
+  todos os membros do grupo já possuem experiência com a tecnologia.
 
   Em concordância com os requisitos estabelecidos, essa aplicação
   permitirá o upload do arquivo CSV gerado pelo veículo, dentro de
