@@ -43,8 +43,8 @@
   Dentre as outras alternativas, adotou-se a locomoção baseada em rodas, pois são mais comumente encontrados na robótica móvel,
   tendo em vista o baixo custo, seja na implementação como na manutenção, fornece uma boa estabilidade, além de sua simplicidade
   mecânica. Como será aplicado em terrenos planos com algumas irregularidades, sem grandes declives e aclives \cite{matsumura2014desenvolvimento}, portanto a alternativa
-  atende bem a proposta. 
-  
+  atende bem a proposta.
+
   Foi escolhido rodas de diâmetro grande, pois com ela o sistema de tração fica mais simples e com custos menores. O veículo também poderá passar por pequenos obstáculos sem dificuldades. Com esse conjunto o robô ficará elevado em relação ao solo, levando em conta seu centro de gravidade e demais componentes atuando. A figura \ref{WHEEL} mostra o tipo de roda relatada.
 
   \begin{figure}[!htbp]
@@ -60,23 +60,23 @@
 
   \subsection{Sistema de Direção}
     O sistema de direção adotado será o de duas barras birrotuladas, onde uma delas será acoplada ao servomotor de direção por um conjunto de pinhão e cremalheira. O motor de direção para este sistema, deverá forncer um grau de liberdade de até 180º, devido a movimentção do veículo. No entanto o modelo a ser usado é o servo digital power Hd.
-    
+
   \subsection{Sistema de Suspensão}
   Como o terreno estudado possui algumas irregularidades, é necessário amortecimento em cada uma das rodas do veículo, portanto é preciso a inserção de um sistema de suspensão independente para as rodas traseiras (geometria \textit{McPherson}) e dependente para o conjunto de rodas dianteiras (geometria de eixo rígidos/eixo de torção).
-  
+
   Suspensões independentes garantem melhor estabilidade aos veículos, em detrimento de maior custo e complexidade de fabricação; neste caso usa-se este sistema no eixo traseiro devido a tração do veículo ser apenas neste eixo. Já as suspensões dependentes são mais fáceis de fabricar e instalar, porém fornecem menor estabilidade ao veículo.
-  
+
   Nas figuras \ref{SUSPENTION01} e \ref{SUSPENTION02} estão alguns exemplos quanto ao sistema de transmissão e o tipo de roda escolhida.
-  
+
   \vfill
-  
+
   \begin{figure}[!htbp]
   	\begin{center}
   		\includegraphics[keepaspectratio=true,scale=0.5]{figuras/suspention01.eps}
   		\caption{\label{SUSPENTION01}Roda, suspensão e chassi Renderizados}
   	\end{center}
   \end{figure}
-  
+
   \begin{figure}[!htbp]
   	\begin{center}
   		\includegraphics[keepaspectratio=true,scale=0.5]{figuras/suspention02.eps}
@@ -99,7 +99,6 @@
       \end{figure}
   
   \newpage
-  
   
   \subsection{Estrutura}
   Após a definição dos sistemas que compõem a parte mecânica deste projeto é necessário a definição de uma estrutura externa para o veículo (rodas, pneus, chassi, eixos, carenagem e suspensão). Foi feita uma pesquisa para verificar quais materiais atenderiam as necessidades da estrutura do veículo. Portanto seguem as tabelas comparativas de possíveis materiais a serem usados.
@@ -139,7 +138,7 @@
   \end{tabular}
   \end{center}
   \end{table}
-  
+
     \begin{table}[!htbp]
     	\begin{center}
     		\caption{Carenagem}
@@ -151,7 +150,7 @@
     		\end{tabular}
     	\end{center}
     \end{table}
-    
+
     \begin{table}[!htbp]
     	\begin{center}
     		\caption{Suspensão}
@@ -163,7 +162,7 @@
     		\end{tabular}
     	\end{center}
     \end{table}
-    
+
     \newpage
 
   Ao comparar as características de cada material descrito acima, podemos chegar a conclusão que os melhores materiais que
@@ -182,25 +181,35 @@
   \begin{itemize}
     \item Motores
 
-    Para o projeto, os motores precisam apresentar um torque elevado e robustez devido ao ambiente em que será submetido,
-    porém, não justifica o emprego de motores de precisão, como são os motores de passo. Portanto, a partir da análise das
-    características dos motores existentes e considerando a satisfação dos requisitos do projeto, custos limitados e o tempo
-    hábil para a construção e integração do rover em questão, os motores para tração escolhidos foram motores de corrente contínua.
 
-    Sendo assim, determinou-se o uso de dois desses motores para cada roda traseira, com transmissões independentes,
-    sendo essas responsáveis pelo torque do veículo. Essa escolha é justificada pela possibilidade de um terreno arenoso,
-    altamente úmido e frequentemente com imperfeições e desníveis.  A utilização destes dois motores garante que não haja
-    atolamento e que o rover possa se locomover sem maiores dificuldades.
+    Para o projeto, os motores precisam apresentar um torque elevado e robustez
+    devido ao ambiente em que será submetido, porém, não justifica o emprego de
+    motores de precisão, como são os motores de passo. Portanto, a partir da
+    análise das características dos motores existentes e considerando a satisfação
+    dos requisitos do projeto, custos limitados e o tempo hábil para a construção
+    e integração do produto em questão, os motores para tração escolhidos foram
+    motores de corrente contínua.
 
-    Para o seu dimensionamento, foram considerados alguns parâmetros iniciais, como massa de 16 kg e velocidade de
-    deslocamento máxima de 2,7 m/s. Com isso, foi possível obter aproximadamente 7,5 N.m de torque e 50 W de potência.
-    Para atender a essa demanda, optou-se por utilizar dois motores, um para cada lado, modelo Mabuchi GD – 558RC/LC 12 V.
-    O qual possui 38 W e um torque máximo de 9,3 N.m.
+    Sendo assim, determinou-se o uso de dois desses motores para cada roda
+    traseira, com transmissões independentes, sendo essas responsáveis pelo torque
+    do veículo. Essa escolha é justificada pela possibilidade de um terreno
+    arenoso, altamente úmido, com imperfeições e desníveis. A utilização destes
+    dois motores garante que não haja atolamento e que o produto possa se locomover sem
+    maiores dificuldades.
 
-    Com o intuito de controlar a direção do veículo, o servomotor de direção 1/10 e 1/8 HPI foi selecionado para
-    orientar as rodas da frente, visto que o mesmo deverá realizar manobras de até 180 graus ao final de cada fileira
-    de morangos, contornando para a próxima. Um motor de passo também poderia satisfazer essa aplicação, porém o custo
-    elevado e a satisfatória associação do servomotor com sensores cumprem os requisitos no projeto.
+    Para o dimensionamento dos motores de tração, foi necessário calcular a
+    potência que o veículo demandará para seu deslocamento. Essa potência foi
+    encontrada a partir da formulação:
+
+      INSERIR FÓRMULA
+
+    Onde  é o torque e  é a rotação em rpm. Sendo que o torque necessário foi calculado com base na formulação:
+
+      INSERIR  OUTRA FÓRMULA
+
+    Sendo  o número de peças acopladas ao eixo do motor,  o momento de inércia de cada peça em questão e  a área das mesmas peças.
+
+    Tendo como parâmetros iniciais, massa do veículo de 16 kg e velocidade de deslocamento máxima de 2,7 m/s, foi possível obter aproximadamente 7,5 N.m de torque e 50W de potência. Para atender a essa demanda, optou-se por utilizar dois motores, um para cada lado, modelo Mabuchi GD – 558RC/LC 12 V. O qual possui 38 W e um torque máximo de 9,3 N.m.
 
     \item Bateria
 
