@@ -55,3 +55,15 @@ o módulo destina-se à duas atividades; são elas a locomoção do veículo
 e perfuração da terra. Os motores para o módulo já foram definidos
 anteriormente no relatório.
 \end{description}
+
+\section{Arquitetura dos sistemas}
+A arquitetura definida para o sistema a princípio foi definida pensando-se em um sistema a parte onde o usuário poderá acessar a partir da sua máquina um sistema web. Neste sistema, o usuário ou produtor, irá acessá-lo e entrará com informações a respeito de sua plantação, como comprimento do camalhão e quantidade de camalhões para que seja possível o robô obtenha os dados da plantação a ser percorrida.
+
+Os dados referente aos camalhões da plantação serão passadas para o robô por um arquivo, como já dito antes, no formato csv. Uma vez que estes dados estejam no robô, eles serão tratados no módulo Plano. Este módulo é responsável pela inteligência do robô onde é definida a trajetória e pesa os critérios de decisão a ser tomada pelo robô. O módulo chamado Model será responsável de trazer e armazenar os dados em um banco de dados no robô. Já o módulo Atuador se comunica com os motores e realiza o movimento além de cuidar do sensoriamento. A seguir na figura \ref{fig:arquitetura_sistema}, temos em alto nível o modelo de arquitetura definido.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=.8\textwidth]{figuras/Arquitetura.eps}
+		\caption{\label{fig:arquitetura_sistema}Arquitetura do sistema.}
+	\end{center}
+\end{figure}
