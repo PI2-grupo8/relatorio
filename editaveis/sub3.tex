@@ -1,31 +1,28 @@
 \section{Subsistema: Localização e Informações}
+Este tópico descreve as soluções para localização do veículo no terreno da lavoura, sua trajetória e 
+como serão processados e armazenados os dados coletados das medições.
 
-  \subsection{Adaptação do Ambiente}
+  \subsection{Localização}
 
-  Sabendo que o plantio do morango utiliza o arranjo de fileiras,
-  optou-se por uma abordagem baseada na utilização de sensores, juntamente a um 
-  algoritmo capaz de processar os dados referentes à distância do veículo em 
-  relação à cada fileira, posicionada sempre à direita.
-  Basicamente o veículo utilizará as fileiras como guia, de forma a realizar a 
-  coleta de dados em todas as fileiras da plantação. Com a finalidade de viabilizar essa 
-  solução serão necessárias algumas adaptações no terreno conforme descreve a figura \ref{fig:adapt}. 
+  Pela necessidade do veículo realizar seu percurso de maneira autônoma, as soluções identificadas 
+  pelo grupo basearam-se em processamento de imagens, GPS e sensores de proximidade.
 
-  \begin{figure}[!htbp]
-  \begin{center}
-  \includegraphics[width=.7\textwidth]{figuras/adapt.eps}
-  \caption{\label{fig:adapt}Adaptação do ambiente.}
-  \end{center}
-  \end{figure}
+  Tendo em vista o curto período de tempo destinado ao desenvolvimento do projeto e a falta de
+  conhecimento da equipe sobre processamento de imagens, essa opção apresentou um alto grau de risco 
+  e foi descartada.
 
-  \subsection{Sensoriamento: Localização}
+  Já a opção do GPS se tornou insatisfatória para o projeto, uma vez que erros
+  referentes à precisão podem acarretar em um comprometimento da plantação
+  por parte do veículo.
 
-  Para as medições referentes à distância foram considerados sensores baseados
-  em dois tipos de princípios, ultrassom e infravermelho. Inicialmente a opção
-  baseada em ultrassom se mostrou mais adequada, porém foi possível perceber
-  que os principais sensores comerciais que se baseavam nesse princípio
-  possuíam uma faixa de detecção bastante reduzida. Sendo assim, foi
-  escolhido um sensor de proximidade baseado em infravermelho apresentado
-  na figura~\ref{fig:infrared}.
+  Dessa forma, foram feitos estudos sobre sensores de proximidade, especificamente 
+  ultrassom e infravermelho, os quais demonstraram ser uma solução viável e foram alvo de 
+  estudos mais aprofundados.
+
+  Inicialmente, a opção baseada em ultrassom se mostrou mais adequada, porém foi possível perceber que os principais sensores
+  comerciais que se baseavam nesse princípio possuíam uma faixa de detecção bastante re-
+  duzida. Sendo assim, foi escolhido um sensor de proximidade baseado em infravermelho
+  apresentado na figura \ref{fig:infrared}.
 
   \begin{figure}[!htbp]
   \begin{center}
@@ -55,7 +52,47 @@
   este elemento apresenta pouca interferência com a luz visível e
   possui um interfaceamento simples com um microcontrolador.
 
-  \subsection{Unidade de Processamento}
+  \subsection{Algoritmo de Locomoção}
+    Dado a utilização de sensores infravermelho/ultrasônico e a disposição da lavoura de morango
+    é possível identificar um típico problema denominado \textit{Wall Follower}.
+
+    Segundo \cite{huang2009}, \textit{Wall Follower},
+    também conhecido como regra da mão direita ou esquerda, é válida para percursos conexos, onde todas as paredes são ligadas entre si, mantendo a mão próxima a parede do labirinto em
+    que se inclui, garantindo assim que o corpo não se perca e finalize
+    o percurso. O principal problema desta regra ocorre quando um percurso
+    possui loops de passagens que projetem uma trajetória sem fim.
+
+    \begin{figure}[!htbp]
+    \begin{center}
+    \includegraphics[width=.7\textwidth]{figuras/wallfollower.eps}
+    \caption{\label{fig:wallfollower}Exemplo de \textit{Wall Follower}.}
+    \end{center}
+    \end{figure}
+
+    \vfill
+    \pagebreak
+
+    Basicamente o veículo utilizará as paredes dos canteiros como guia, realizando a
+    coleta de dados sempre a sua direita. Para viabilizar essa solução serão necessárias algumas adaptações no terreno com a adição de estruturas à lavoura, criando uma espécie de circuito. A figura \ref{fig:ambientadapt} representa o caminho a ser seguido pelo veículo.
+
+    \begin{figure}[!htbp]
+    \begin{center}
+    \includegraphics[width=.7\textwidth]{figuras/adapt.eps}
+    \caption{\label{fig:ambientadapt}Adaptação do ambiente.}
+    \end{center}
+    \end{figure}
+
+    \vfill
+    \pagebreak
+
+    Para a escolha do material ponderou-se necessidade de um material
+    barato e de fácil instalação/manuseio. Desta forma, o plástico e
+    a madeira foram os materiais escolhidos para compor os obstáculos
+    que irão ajudar o veículo a percorrer o trajeto.
+
+  \subsection{Informações}
+
+  \subsubsection{Unidade de Processamento}
 
   A unidade de processamento escolhida foi o Raspberry Pi B+,
   devido a sua robustez. Esta unidade conta com o microprocessador
@@ -78,96 +115,7 @@
   \end{center}
   \end{figure}
 
-  \subsection{Algoritmo de Localização}
-
- \begin{itemize}
-
- \item Processamento de Imagens
-
-  Processamento de imagens consiste em uma técnica para a análise de dados
-  multidimensionais, que permite manipular e tratar imagens com objetivo de
-  obter informações e melhorar as características visuais da imagem.
-  A primeira etapa consiste em adquirir uma imagem, por exemplo,
-  através de uma câmera digital, de um scanner laser, de um ultrassom,
-  de um ressonador magnético, ou por qualquer outro meio. Após a captura,
-  uma imagem precisa ser representada de forma apropriada para tratamento
-  computacional, ou seja, sua representação se dará como uma função
-  bidimensional ou tridimensional. Feito isso, inicia-se o pré-processamento
-  da imagem. Nessa etapa a imagem passa por um processo de filtragem,
-  no qual são eliminados os ruídos, que podem ser obtidos durante a
-  captura da imagem, melhorando assim a qualidade e permitindo uma melhor
-  discriminação dos objetos presentes na mesma.
-
-  Pelo curto tempo destinado ao desenvolvimento do projeto e a falta de
-  conhecimento da equipe sobre o assunto, a escolha por processamento de
-  imagens acabou sendo descartada pelo seu alto grau de risco ao projeto.
-
- \item Localização por meio GPS
-
-  O sistema de posicionamento global (GPS) é uma tecnologia
-  para navegação em ambientes externos. O GPS foi desenvolvido
-  pelo Departamento de Defesa Americano, sendo composto por um conjunto
-  de satélites que transmitem um sinal de rádio-freqüência codificado.
-  Usando-se métodos de trilaterização avançados, receptores no solo podem
-  medir as suas posições baseado no tempo de viagem dos sinais de
-  rádio-freqüência dos satélites, permitindo o cálculo da latitude,
-  longitude e altitude do receptor.
-
-  O principal problema de se usar marcos naturais do ambiente na
-  navegação é detectar e combinar as características dos marcos
-  a partir das informações dos sensores. A escolha natural do sensor
-  para esta tarefa é a visão computacional. A maior parte dos marcos
-  naturais do ambiente baseados em visão são longas bordas verticais,
-  como portas, junções de paredes e luzes no teto.
-
-  Pelo local da plantação ser um ambiente de tamanho de visibilidade
-  baixa e possuir características específicas da plantação, a localização
-  por GPS se torna insatisfatória para o projeto, uma vez que erros
-  referentes à precisão podem acarretar em um comprometimento da plantação
-  por parte do veículo.
-
-
- \item Localização por Sensoriamento
-
-  As abordagens estudadas que podem resolver o problema da localização
-  basearam-se no sensoriamento infravermelho e ultrassônico.
-  Dado as condições da lavoura de morango ambos poderiam ser
-  aplicados como um problema referente à Wall follower.
-  
-  Wall follower é a regra mais conhecida para percurso em labirintos,
-  também conhecido como regra da mão direita ou esquerda.
-  Ela é válida para percursos conexos, onde todas as paredes são
-  ligadas entre si, mantendo a mão próxima a parede do labirinto em
-  que se inclui, garantindo assim que o corpo não se perca e finalize
-  o percurso. O principal problema desta regra ocorre quando um percurso
-  possui loops de passagens que projetem uma trajetória sem fim.
-
- \item Solução adotada: \textit{Wall Follower}
-
-  A solução adotada para o projeto baseou-se na utilização de sensores
-  infravermelho, pois atendiam os requisitos com maior simplicidade,
-  menor custo técnico e computacional.
-  
-  Todavia, devido as soluções adotadas para tração, movimentação das
-  rodas e perfuração (realizada somente pelo lado direito do veículo),
-  serão necessárias algumas modificações no ambiente de plantio para modelagem
-  do sistema como um cenário “Wall Follower” citado acima.
-  
-  Para que o veículo seja capaz de percorrer todas as fileiras sem passar
-  pelo mesmo caminho de maneira redundante, foi pensada a adição de
-  estruturas à lavoura para montar uma espécie de circuito. O esquemático
-  abaixo representa a estrutura da lavoura e o caminho a ser percorrido pelo
-  veículo que irá seguir sempre a parede à sua direita até completar todo o
-  percurso.
-
-  Para a escolha do material ponderou-se necessidade de um material
-  barato e de fácil instalação/manuseio. Desta forma, o plástico e
-  a madeira foram os materiais escolhidos para compor os obstáculos
-  que irão ajudar o veículo a percorrer o trajeto.
-
-\end{itemize}
-
-  \subsection{Armazenamento dos Dados}
+  \subsubsection{Armazenamento dos Dados}
 
   Para o armazenamento de dados foi escolhido um cartão de memória
   Micro SD de 8GB da Sandisk. Sua escolha foi motivada devido à
@@ -176,7 +124,7 @@
   análise. Além disso, a placa microprocessadora escolhida oferece
   suporte para cartão de memória, dispensando o uso de um módulo avulso
   para a realização das operações de armazenamento. A figura~\ref{fig:sdcard}
-  apresenta o cartão de memória. 
+  apresenta o cartão de memória.
 
   \begin{figure}[!htbp]
   \begin{center}
@@ -194,7 +142,7 @@
   análise posterior, assim como sua apresentação gráfica para
   o operador.
 
-  \subsection{Leitura das Informações}
+  \subsubsection{Leitura das Informações}
 
   Uma parte importante do o projeto consiste na apresentação dos
   dados para o gestor da lavoura. Foi definido que para esse fim,
@@ -207,7 +155,7 @@
   da equipe responsável pelo desenvolvimento da aplicação, visto que
   todos os desenvolvedores já possuem experiência com a tecnologia
   escolhida.
-  
+
   Em concordância com os requisitos estabelecidos, essa aplicação
   permitirá o upload do arquivo CSV gerado pelo veículo, dentro de
   uma área restrita da aplicação, disponível apenas após a realização
