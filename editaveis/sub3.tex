@@ -1,22 +1,22 @@
 \section{Subsistema: Localização e Informações}
-Este tópico descreve as soluções para localização do veículo no terreno da lavoura, sua trajetória e 
+Este tópico descreve as soluções para localização do veículo no terreno da lavoura, sua trajetória e
 como serão processados e armazenados os dados coletados das medições.
 
   \subsection{Localização}
 
-  Pela necessidade do veículo realizar seu percurso de maneira autônoma, as soluções identificadas 
+  Pela necessidade do veículo realizar seu percurso de maneira autônoma, as soluções identificadas
   pelo grupo basearam-se em processamento de imagens, GPS e sensores de proximidade.
 
   Tendo em vista o curto período de tempo destinado ao desenvolvimento do projeto e a falta de
-  conhecimento da equipe sobre processamento de imagens, essa opção apresentou um alto grau de risco 
+  conhecimento da equipe sobre processamento de imagens, essa opção apresentou um alto grau de risco
   e foi descartada.
 
   Já a opção do GPS se tornou insatisfatória para o projeto, uma vez que erros
   referentes à precisão podem acarretar em um comprometimento da plantação
   por parte do veículo.
 
-  Dessa forma, foram feitos estudos sobre sensores de proximidade, especificamente 
-  ultrassom e infravermelho, os quais demonstraram ser uma solução viável e foram alvo de 
+  Dessa forma, foram feitos estudos sobre sensores de proximidade, especificamente
+  ultrassom e infravermelho, os quais demonstraram ser uma solução viável e foram alvo de
   estudos mais aprofundados.
 
   Inicialmente, a opção baseada em ultrassom se mostrou mais adequada, porém foi possível perceber que os principais sensores
@@ -48,16 +48,16 @@ como serão processados e armazenados os dados coletados das medições.
 
   A escolha do elemento foi motivada pela capacidade de detecção
   de proximidade ser adequada para o funcionamento do algoritmo
-  de localização, mais especificamente entre 3 e 80cm.  Além disso,
+  de lcomoção, mais especificamente entre 3 e 80cm.  Além disso,
   este elemento apresenta pouca interferência com a luz visível e
   possui um interfaceamento simples com um microcontrolador.
 
   \subsection{Algoritmo de Locomoção}
-    Dado a utilização de sensores infravermelho/ultrasônico e a disposição da lavoura de morango
+    Dado a utilização de sensores infravermelho e a disposição da lavoura de morango
     é possível identificar um típico problema denominado \textit{Wall Follower}.
 
     Segundo \cite{huang2009}, \textit{Wall Follower},
-    também conhecido como regra da mão direita ou esquerda, é válida para percursos conexos, onde todas as paredes são ligadas entre si, mantendo a mão próxima a parede do labirinto em
+    também conhecido como regra da mão direita ou esquerda, é válido para percursos conexos, onde todas as paredes são ligadas entre si, mantendo a mão próxima a parede do labirinto em
     que se inclui, garantindo assim que o corpo não se perca e finalize
     o percurso. O principal problema desta regra ocorre quando um percurso
     possui loops de passagens que projetem uma trajetória sem fim.
@@ -85,15 +85,16 @@ como serão processados e armazenados os dados coletados das medições.
     \vfill
     \pagebreak
 
-    Para a escolha do material ponderou-se necessidade de um material
-    barato e de fácil instalação/manuseio. Desta forma, o plástico e
-    a madeira foram os materiais escolhidos para compor os obstáculos
+    Para a escolha dos componentes para a construção das barreiras ponderou-se
+    necessidade de um material barato e de fácil instalação/manuseio.
+    Desta forma, o plástico e a madeira foram os materiais escolhidos para compor os obstáculos
     que irão ajudar o veículo a percorrer o trajeto.
 
   \subsection{Informações}
 
   \subsubsection{Unidade de Processamento}
 
+  Para processamento das informações e con
   A unidade de processamento escolhida foi o Raspberry Pi B+,
   devido a sua robustez. Esta unidade conta com o microprocessador
   BCM2835 da Broadcom, que é baseado no ARM1176JZFS com clock de
