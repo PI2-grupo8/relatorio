@@ -15,7 +15,7 @@
     além da baixa disponibilidade de materiais para sua fabricação. Outra desvantagem é que este sistema impede que o veículo realize
     manobras de contra-rotação.
 
-    \item Sistema de Roda
+    \item Sistema de Rodas
 
     O sistema de rodas consiste na configuração mais utilizada em todos os tipos de veículos, a literatura é bastante consolidada
     no que se refere a sistemas de transmissão e acoplamentos para veículos movidos sobre rodas. Este sistema foi o escolhido para
@@ -42,50 +42,52 @@
 
   Dentre as outras alternativas, adotou-se a locomoção baseada em rodas, pois são mais comumente encontrados na robótica móvel,
   tendo em vista o baixo custo, seja na implementação como na manutenção, fornece uma boa estabilidade, além de sua simplicidade
-  mecânica. Como será aplicado em terrenos planos com algumas irregularidades, sem grandes declives e aclives, a alternativa
-  atende bem a proposta. \cite{matsumura2014desenvolvimento}
-
-  Usaremos um sistema de direção de duas barras birrotuladas, onde uma delas será acoplada ao servomotor de direção por um
-  conjunto de pinhão e cremalheira.
-
-  Será adotado o princípio de veículos off-road, portanto será aplicado sistemas de amortecimento nas quatro rodas para terrenos
-  irregulares, composto por um sistema de suspensões independentes para as rodas traseiras e dependente para o conjunto das
-  rodas dianteiras, como observado nas Mcpherson's, comum em alguns carros atuais. Foi escolhido rodas de diâmetro grande,
-  pois com ela o sistema de tração fica mais simples e com custos menores. O veículo também poderá passar por pequenos
-  obstáculos sem dificuldades. Com esse conjunto o robô ficará elevado em relação ao solo, levando em conta seu centro
-  de gravidade e demais componentes atuando.
-
-  Nas figuras \ref{SUSPENTION01}, \ref{SUSPENTION02} e \ref{WHEEL} estão alguns exemplos quanto ao sistema de transmissão e o tipo de roda escolhida.
-
-  \vfill
+  mecânica. Como será aplicado em terrenos planos com algumas irregularidades, sem grandes declives e aclives \cite{matsumura2014desenvolvimento}, portanto a alternativa
+  atende bem a proposta. 
+  
+  Foi escolhido rodas de diâmetro grande, pois com ela o sistema de tração fica mais simples e com custos menores. O veículo também poderá passar por pequenos obstáculos sem dificuldades. Com esse conjunto o robô ficará elevado em relação ao solo, levando em conta seu centro de gravidade e demais componentes atuando. A figura \ref{WHEEL} mostra o tipo de roda relatada.
 
   \begin{figure}[!htbp]
   \begin{center}
-  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/suspention01.eps}
-  \caption{\label{SUSPENTION01}Roda, suspensão e chassi Renderizados}
-  \end{center}
-  \end{figure}
-
-  \begin{figure}[!htbp]
-  \begin{center}
-  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/suspention02.eps}
-  \caption{\label{SUSPENTION02}Roda, suspensão e chassi Renderizados}
-  \end{center}
-  \end{figure}
-
-  \begin{figure}[!htbp]
-  \begin{center}
-  \includegraphics[keepaspectratio=true,scale=0.8]{figuras/wheel.eps}
+  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/wheel.eps}
   \caption{\label{WHEEL}Roda escolhida para o projeto}
   \end{center}
   \end{figure}
 
+  \newpage
   \vfill
   \pagebreak
 
   \subsection{Sistema de Direção}
+    O sistema de direção adotado será o de duas barras birrotuladas, onde uma delas será acoplada ao servomotor de direção por um conjunto de pinhão e cremalheira. O motor de direção para este sistema, deverá forncer um grau de liberdade de até 180º, devido a movimentção do veículo. No entanto o modelo a ser usado é o servo digital power Hd.
+    
   \subsection{Sistema de Suspensão}
+  Como o terreno estudado possui algumas irregularidades, é necessário amortecimento em cada uma das rodas do veículo, portanto é preciso a inserção de um sistema de suspensão independente para as rodas traseiras (geometria \textit{McPherson}) e dependente para o conjunto de rodas dianteiras (geometria de eixo rígidos/eixo de torção).
+  
+  Suspensões independentes garantem melhor estabilidade aos veículos, em detrimento de maior custo e complexidade de fabricação; neste caso usa-se este sistema no eixo traseiro devido a tração do veículo ser apenas neste eixo. Já as suspensões dependentes são mais fáceis de fabricar e instalar, porém fornecem menor estabilidade ao veículo.
+  
+  Nas figuras \ref{SUSPENTION01} e \ref{SUSPENTION02} estão alguns exemplos quanto ao sistema de transmissão e o tipo de roda escolhida.
+  
+  \vfill
+  
+  \begin{figure}[!htbp]
+  	\begin{center}
+  		\includegraphics[keepaspectratio=true,scale=0.5]{figuras/suspention01.eps}
+  		\caption{\label{SUSPENTION01}Roda, suspensão e chassi Renderizados}
+  	\end{center}
+  \end{figure}
+  
+  \begin{figure}[!htbp]
+  	\begin{center}
+  		\includegraphics[keepaspectratio=true,scale=0.5]{figuras/suspention02.eps}
+  		\caption{\label{SUSPENTION02}Roda, suspensão e chassi Renderizados}
+  	\end{center}
+  \end{figure}
+  
+  \newpage
+  
   \subsection{Estrutura}
+  Após a definição dos sistemas que compõem a parte mecânica deste projeto é necessário a definição de uma estrutura externa para o veículo (rodas, pneus, chassi, eixos, carenagem e suspensão). Foi feita uma pesquisa para verificar quais materiais atenderiam as necessidades da estrutura do veículo. Portanto seguem as tabelas comparativas de possíveis materiais a serem usados.
 
   \begin{table}[!htbp]
   \begin{center}
@@ -122,6 +124,32 @@
   \end{tabular}
   \end{center}
   \end{table}
+  
+    \begin{table}[!htbp]
+    	\begin{center}
+    		\caption{Carenagem}
+    		\begin{tabular}{|p{3cm}|p{3cm}|p{2cm}|p{4cm}|}
+    			\hline
+    			\textbf{Carenagem} & \textbf{Material} & \textbf{Imagem} & \textbf{Link}\\\hline\hline
+    			Tipo 1 & Fibra de vidro & \includegraphics[width=2cm]{figuras/carenagem_fibra.eps} & \href{http://produto.mercadolivre.com.br/MLB-712761072-kit-resina-500g-manta-fibra-de-vidro-300g-10g-catalizador-_JM}{mercadolivre.com.br}\\\hline
+    			Tipo 2 & Plástico de fibra de carbono para impressora 3D & \includegraphics[width=2cm]{figuras/carenagem_plastico.eps} & \href{http://produto.mercadolivre.com.br/MLB-704169297-envelopamento-fibra-carbono-teto-ou-capo-1x122-_JM}{mercadolivre.com.br}\\\hline
+    		\end{tabular}
+    	\end{center}
+    \end{table}
+    
+    \begin{table}[!htbp]
+    	\begin{center}
+    		\caption{Suspensão}
+    		\begin{tabular}{|p{3cm}|p{3cm}|p{2cm}|p{4cm}|}
+    			\hline
+    			\textbf{Suspensão} & \textbf{Material} & \textbf{Imagem} & \textbf{Link}\\\hline\hline
+    			Tipo 1 & Aluminio & \includegraphics[width=2cm]{figuras/suspensao_aluminio_1.eps} & \href{http://produto.mercadolivre.com.br/MLB-689668697-par-amortecedor-aluminio-hsp-106004-06038-06062-rc-110-97mm-_JM}{mercadolivre.com.br}\\\hline
+    			Tipo 2 & Aluminio & \includegraphics[width=2cm]{figuras/suspensao_aluminio_2.eps} & \href{http://produto.mercadolivre.com.br/MLB-722851070-par-de-amortecedor-75mm-para-automodelo-110-_JM}{mercadolivre.com.br}\\\hline
+    		\end{tabular}
+    	\end{center}
+    \end{table}
+    
+    \newpage
 
   Ao comparar as características de cada material descrito acima, podemos chegar a conclusão que os melhores materiais que
   serão usados para a produção do veículo são:
@@ -133,31 +161,7 @@
     \item Carenagem: a fibra de vidro é um dos materiais mais usados para esse tipo de aplicação, porque é de baixo custo e muito fácil de trabalhar. Já o plástico de fibra de carbono, tem um custo maior, precisa de uma impressora 3D para imprimir a peça e de um projeto feito em um software compatível com a  impressora. Ou seja, o plástico de carbono demanda custo e tempo para fabricar uma peça.
   \end{itemize}
 
-  \begin{table}[!htbp]
-  \begin{center}
-  \caption{Carenagem}
-  \begin{tabular}{|p{3cm}|p{3cm}|p{2cm}|p{4cm}|}
-  \hline
-  \textbf{Carenagem} & \textbf{Material} & \textbf{Imagem} & \textbf{Link}\\\hline\hline
-  Tipo 1 & Fibra de vidro & \includegraphics[width=2cm]{figuras/carenagem_fibra.eps} & \href{http://produto.mercadolivre.com.br/MLB-712761072-kit-resina-500g-manta-fibra-de-vidro-300g-10g-catalizador-_JM}{mercadolivre.com.br}\\\hline
-  Tipo 2 & Plástico de fibra de carbono para impressora 3D & \includegraphics[width=2cm]{figuras/carenagem_plastico.eps} & \href{http://produto.mercadolivre.com.br/MLB-704169297-envelopamento-fibra-carbono-teto-ou-capo-1x122-_JM}{mercadolivre.com.br}\\\hline
-  \end{tabular}
-  \end{center}
-  \end{table}
 
-  \begin{table}[!htbp]
-  \begin{center}
-  \caption{Suspensão}
-  \begin{tabular}{|p{3cm}|p{3cm}|p{2cm}|p{4cm}|}
-  \hline
-  \textbf{Suspensão} & \textbf{Material} & \textbf{Imagem} & \textbf{Link}\\\hline\hline
-  Tipo 1 & Aluminio & \includegraphics[width=2cm]{figuras/suspensao_aluminio_1.eps} & \href{http://produto.mercadolivre.com.br/MLB-689668697-par-amortecedor-aluminio-hsp-106004-06038-06062-rc-110-97mm-_JM}{mercadolivre.com.br}\\\hline
-  Tipo 2 & Aluminio & \includegraphics[width=2cm]{figuras/suspensao_aluminio_2.eps} & \href{http://produto.mercadolivre.com.br/MLB-722851070-par-de-amortecedor-75mm-para-automodelo-110-_JM}{mercadolivre.com.br}\\\hline
-  \end{tabular}
-  \end{center}
-  \end{table}
-
-  \newpage
   \subsection{Sistema de Alimentação}
 
   \begin{itemize}
