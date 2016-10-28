@@ -157,10 +157,25 @@ como serão processados e armazenados os dados coletados das medições.
   permitirá o upload do arquivo CSV gerado pelo veículo, dentro de
   uma área restrita da aplicação, disponível apenas após a realização
   do login.
-  Após a realização do upload, o usuário possuirá a opção de visualizar
-  os dados de forma gráfica, sendo que a visualização gráfica se dará
-  com base em um heatmap (mapa de calor) para uma melhor representação
-  da lavoura.
   Além da representação gráfica, o gestor da lavoura poderá obter
   esses dados em formato de relatório, sendo permitida sua
   exportação para um arquivo PDF (Portable Document Format).
+
+  \vfill
+  \pagebreak
+
+  Após a obtenção dos dados, o usuário possuirá a opção de visualiza-los de forma gráfica, sendo que esta visualização se dará
+  com base em um mapa de calor (\textit{heatmap}), conforme a figura \ref{fig:heatmap} representa, para uma melhor representação da lavoura.
+
+  O conceito dos mapas de calor é baseado na representação de diversos pontos sobrepostos em um mapa, sendo que quanto mais pontos
+  forem existentes em uma mesma posição, uma coloração mais forte será atribuída, por isso ganhando essa denominação.
+
+  Para a implementação dos mapas de calor no contexto deste projeto, foi utilizada a API (\textit{Application Programming Interface})
+  do Google Maps. Essa API permite acesso as imagens dos mapas e a posterior aplicação de uma camada com os pontos do mapa de calor.
+
+  \begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[width=.5\textwidth]{figuras/heatmap.eps}
+  \caption{\label{fig:heatmap}Exemplo de mapa de calor.}
+  \end{center}
+  \end{figure}

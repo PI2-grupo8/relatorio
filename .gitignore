@@ -20,3 +20,5 @@
 *.toc
 *.idx
 tcc.synctex.gz
+
+.DS_Store
