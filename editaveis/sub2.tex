@@ -30,33 +30,101 @@
 
   Já para a extensão do sensor para o solo, será utilizado o servo motor Tower
   Pro Mg90s Metal Gear, tendo como base o torque de 2,2 Kg/cm quando operado na faixa de 6V.
-  \subsection{Sensoriamento: Coleta}
 
-  \begin{itemize}
+% Daqui para a frente quem escreve é o PG {{{
+\subsection{Sensoriamento: Coleta}
 
-  \item Sensor de Umidade e Temperatura do Ar
 
-  O sensor escolhido para realizar as medições referentes à umidade relativa e
-  temperatura do ar foi o Aosong DHT11. Seu elemento sensor de temperatura é um
-  termistor do tipo NTC e o sensor de Umidade é do tipo HR202, o circuito interno
-  faz a leitura dos sensores e se comunica a um microcontrolador através de um
-  sinal serial de uma via~\cite{AOSONG}.
+  % Sensor de Umidade e Temperatura (AM2302) {{{
+	\subsubsection{Sensor de Umidade e Temperatura do Ar (AM2302)}
 
-  A escolha do elemento foi motivada por diversos fatores. Primeiramente a
-  adequação do sensor às faixas de medição do ambiente, tanto em umidade
-  relativa, quanto em temperatura. Além disso, o elemento apresenta precisão de
-  medição e tempo de resposta adequados para a aplicação.  Por fim, a
-  possibilidade de realizar medições de dois parâmetros com apenas um sensor
-  mantendo a garantia de confiabilidade e estabilidade a longo prazo.
+		O sensor escolhido para as medições de temperatura e umidade relativa do ar
+		é o AM2302 (idêntico ao DHT22) da AOSONG que é apresentado na figura~\ref{fig:AM2302}.
 
-  \begin{figure}[!htbp]
-  \begin{center}
-  \includegraphics[keepaspectratio=true,scale=0.1]{figuras/dht-11.eps}
-  \caption{\label{DHT11}Sensor de umidade relativa e temperatura do ar}
-  \end{center}
-  \end{figure}
+		\begin{figure}[!htbp]
+		\begin{center}
+		\includegraphics[width=.4\textwidth]{figuras/am2302.eps}
+		\caption{\label{fig:AM2302}Sensor de umidade relativa e temperatura do ar~\cite{aosong}.}
+		\end{center}
+		\end{figure}
 
-  \item Sensor de Umidade do Solo
+		O AM2302 contém um sensor capacitivo de umidade para a medição da umidade relativa
+		do ar com uma resolução de $0.1~\%\textrm{RH}$ e precisão de $\pm 2~\%\textrm{RH}$.
+		Além do sensor de umidade, este módulo também contém um sensor de temperatura com
+		alta precisão e alcance de $-40~\celsius$ à $80~\celsius$, resolução de $0.1~\celsius$,
+		e precisão de $\pm 0.5~\celsius$~\cite{aosong}.
+
+		O AM2302 possui um microcontrolador de 8 bits embutido com parâmetros de calibração já gravados
+		que forncem medições precisas e estáveis durante um longo tempo de utilização.
+		Os dados fornecidos pelos sensores são de 16 bits para temperatura e
+		16 bits para umidade relativa do ar~\cite{aosong}.
+
+		A comunicação com o dispositivo se dá por meio de um único pino (SDA, pino 2) que é
+		bidirecional e são retornados 40 bits ao microcontrolador que realizou a requisição, onde
+		o primeiro e o segundo bytes contém a última leitura de umidade,
+		o terceiro e o quarto bytes contém a última leitura de temperatura,
+		e o quinto byte contém um \textit{checksum} que é a soma dos 4 primeiros bytes
+		indicando se os dados são válidos.
+		O pino de alimentação é o pino 1 e ele pode ser alimentado com $3.3\textrm{V}$--$5\textrm{V}$,
+		sendo $5\textrm{V}$ o recomendado. O pino 3 não é utilizado e o pino 4 é o terra.
+		O tempo mínimo entre leituras consecutivas é de 2 segundos~\cite{aosong}.
+
+	\paragraph{Implementação}
+
+		A complexidade de implementação deste módulo é bastante reduzida
+		se for utilizada uma das bibliotecas já desenvolvidas para o envio
+		e leitura de dados do AM2302. Felizmente a Adafruit, uma empresa americana
+		que trabalha com \textit{hardware open-source}, fornece uma biblioteca para
+		a plataforma Arduino para tornar o desenvolvimento mais simples\footnote{\url{https://github.com/adafruit/DHT-sensor-library}.}.
+		Portanto, foi utilizada a biblioteca \texttt{DHT.h} para os propósitos
+		deste projeto.
+
+	\paragraph{Testes}
+
+		Os testes feitos com o módulo AM2302 foram realizados utilizando
+		o \textit{hardware} apresentado na figura~\ref{fig:am2302test} (esquemático
+		produzido com o auxílio da ferramenta Fritzing).
+
+		\begin{figure}[!htbp]
+		\begin{center}
+		\includegraphics[width=.8\textwidth]{figuras/am2302_test.eps}
+		\caption{\label{fig:am2302test}\textit{Hardware} utilizado para teste.}
+		\end{center}
+		\end{figure}
+
+		Para os testes iniciais foi utilizado um Arduino Uno, onde era enviado uma requisição
+		no formato de um número e então era feita a leitura e enviada pela porta serial.
+		O resultado do teste é mostrado na figura~\ref{fig:am2302ardu}.
+
+		\begin{figure}[!htbp]
+		\begin{center}
+		\includegraphics[width=.7\textwidth]{figuras/am2302_arduino.eps}
+		\caption{\label{fig:am2302ardu}Resultado do teste da leitura dos sensores.}
+		\end{center}
+		\end{figure}
+
+		Como o resultado do teste foi satisfatório é necessário realizar
+		o teste de comunicação com a Raspberry Pi. Como a Raspberry possui
+		um Linux embarcado e a comunicação é serial, é necessário utilizar
+		as bibliotecas fornecidades pelo Linux para que a comunicação
+		possa ser estabelecida, e a biblioteca mais importante neste caso
+		é a \texttt{termio.h}.
+		
+		Os valores lidos pelo sensor se encontram no formato de ponto flutuante
+		de 4 bytes (IEEE 754) e, portanto, tanto para a temperatura quanto
+		para a umidade relativa do ar é necessário que o Arduino Uno envie
+		4 bytes para cada. Os resultados do teste estão mostrados na figura~\ref{fig:am2302rasp}.
+
+		\begin{figure}[!htbp]
+		\begin{center}
+		\includegraphics[width=\textwidth]{figuras/am2302_raspberry.eps}
+		\caption{\label{fig:am2302rasp}Resultado do teste de comunicação com a Raspberry Pi.}
+		\end{center}
+		\end{figure}
+  % }}}
+
+  % Sensor de umidade do solo (FC-28) {{{
+  \subsubsection{Sensor de Umidade do Solo (FC-28)}
 
   O sensor escolhido para a medição da umidade do solo foi o HL-69,
   tanto pelo baixo custo quanto pelo simples processo de medição.
@@ -86,8 +154,10 @@
   \caption{\label{DHT11}Sensor de umidade do solo}
   \end{center}
   \end{figure}
+  % }}}
 
-  \item Modulo de Controle
+  % Módulo de controle (Arduino Mega2560) {{{
+  \subsubsection{Módulo de Controle (Arduino Mega2560)}
 
   Para o controle do sistema escolheu-se a placa Arduino Mega2560.
   O Mega2560 é uma placa de microcontrolador baseado no ATmega2560 .
@@ -102,8 +172,7 @@
   \caption{\label{fig:arduino}Arduino Mega2560.}
   \end{center}
   \end{figure}
-
-  \newpage
+  % }}}
 
   A escolha da placa foi motivada por diversos fatores.
   Primeiramente, ela é capaz de realizar as demandas de controle do
@@ -113,5 +182,4 @@
   a interface com o Linux e possui um ambiente de programação simples,
   claro e bastante familiar.
 
-
-  \end{itemize}
+% Fim da parte do PG }}}
