@@ -114,39 +114,28 @@ como serão processados e armazenados os dados coletados das medições.
   \end{figure}
 
   \subsubsection{Armazenamento dos Dados}
+  Os dados de configurações do veículo e resultados das medições serão armazenados
+  em um cartão de memória inserido na Raspberry Pi, em um diretório definido.
 
-  Para o armazenamento de dados foi escolhido um cartão de memória
-  Micro SD de 8GB da Sandisk. Sua escolha foi motivada devido à
-  necessidade de um dispositivo de armazenamento portátil, capaz de
-  armazenar os dados adquiridos a partir dos sensores para a posterior
-  análise. Além disso, a placa microprocessadora escolhida oferece
-  suporte para cartão de memória, dispensando o uso de um módulo avulso
-  para a realização das operações de armazenamento. A figura~\ref{fig:sdcard}
-  apresenta o cartão de memória.
-
-  \begin{figure}[!htbp]
-  \begin{center}
-  \includegraphics[width=.5\textwidth]{figuras/sdcard.eps}
-  \caption{\label{fig:sdcard}Cartão de memória.}
-  \end{center}
-  \end{figure}
-
-  Os dados serão armazenados no cartão de memória da Raspberry Pi
-  em um arquivo no formato CSV (\textit{Comma Separated Value}). Os dados
-  serão dispostos em colunas com a seguinte ordem: posição da medição
+  As medições serão gravadas em arquivos no formato CSV (\textit{Comma Separated Value}),
+  dispostas em colunas na seguinte ordem: posição da medição
   em metros, umidade do solo, umidade relativa do ar e temperatura do
   ambiente.
   Os dados dispostos desta maneira facilitam o processamento e
   análise posterior, assim como sua apresentação gráfica para
   o operador.
+
+  \begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[width=.3\textwidth]{figuras/sdcard.eps}
+  \caption{\label{fig:sdcard}Cartão de memória.}
+  \end{center}
+  \end{figure}
   
-  Posteriormente depois de uma análise do projeto pela supervisão, o meio utilizado para armazenamento dos dados, será o envio dos mesmos via wireless através do protocolo ftp.
-  
-  O protocolo ftp é usado para transferir arquivos através de redes TCP/IP e claro, também através da Internet. Apesar de ser relativamente novo (o padrão foi estabelecido apenas em 1985, ao contrário do TCP/IP e do HTTP que foram criados durante a década de 70), o FTP logo tornou-se extremamente popular, pois é fácil de usar, seguro e oferece uma grande gama de recursos.
-  
-  Normalmente o acesso é controlado através de um login e senha. No servidor é possível configurar quais pastas devem ficar disponíveis para cada usuário e especificar as permissões de cada um (ler, escrever, listar, etc.). Existem ainda a opção de criar um login anônimo, com permissões restritas, que pode ser usado para compartilhar dados de acesso público.
-  
-  Com esse protocolo, utilizamos para enviar os arquivos com informações que servirão para fazer parte da orientação do carro e também obter o arquivo com as informações dos dados coletados de temperatura do ar, umidade do ar e do solo.
+  Posteriormente, o acesso aos dados será feito através de uma conexão de  rede
+  wireless entre um computador e a Raspberry. Para a comunicação  entre os
+  dispositivos será utilizado o protocolo FTP, que é bastante utilizado para
+  transferência de arquivos em uma rede.
 
   \subsubsection{Apresentação das Informações}
 
