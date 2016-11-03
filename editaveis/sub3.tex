@@ -113,7 +113,7 @@ como serão processados e armazenados os dados coletados das medições.
   \end{itemize}
 
   Na figura \ref{fig:start_navigation} encontra-se o corpo do método \textit{start navigation}, o qual
-  é responsável por executar, em sequência, os quatros eventos citados anteriormente até que o circuito
+  é responsável por executar, em sequência, os eventos citados anteriormente até que o circuito
   seja devidamente concluído (número de canteiros analisados igual ao número total de canteiros).
 
   \begin{figure}[!htbp]
@@ -122,6 +122,9 @@ como serão processados e armazenados os dados coletados das medições.
   \caption{\label{fig:start_navigation}Corpo do Método \textit{start navigation}.}
   \end{center}
   \end{figure}
+
+  O princípio do algoritmo de \textit{Wall Follower} encontra-se no método \textit{check wall distance}, figura \ref{fig:check_wall_distance}, uma vez que são lidos os dados dos sensores ultrassônicos e
+  verificado em qual estado o veículo encontra-se, assim, com base nesse estado, será chamada uma função que irá direcionar o veículo para uma distância segura.
 
   \subsection{Informações}
 
