@@ -90,6 +90,39 @@ como serão processados e armazenados os dados coletados das medições.
     Desta forma, o plástico e a madeira foram os materiais escolhidos para compor os obstáculos
     que irão ajudar o veículo a percorrer o trajeto.
 
+  \subsection{Solução Algoritmo}
+  O algoritmo de locomoção do veículo, figura \ref{fig:main_algoritmo}, foi escrito em linguagem C e utiliza como base os valores refentes
+  ao total de canteiros, quantidade de medições por canteiro e distância entre as medições, os quais
+  encontram-se em um arquivo denominado "\textit{settings.conf}". Inicialmente são lidos e armazenados tais valores
+  em três variáveis, logo em seguida é lido o nome do \textit{device driver} que realizará a comunicação com o Arduino (argumento passado quando o programa é executado). Tendo conhecimento desse \textit{device driver} é iniciado uma UART que possibilita a comunicação do programa em C com o Arduino, ou seja, a possibilidade de ler dados dos sensores e enviar comandos que o Arduino irá realizar. É chamado o método \textit{start navigation} que irá tratar todo o resto do percurso e ao fim do mesmo é fechado o arquivo \textit{settings.conf} e finalizada a UART.
+
+  \begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{figuras/main.eps}
+  \caption{\label{fig:main_algoritmo}Início Algoritmo de Locomoção.}
+  \end{center}
+  \end{figure}
+
+  Tendo conhecimento do percurso que o veículo percorrerá, figura \ref{fig:ambientadapt}, definiu-se que os eventos realizados pelo veículo serão:
+  \begin{itemize}
+    \item Realizar coleta de dados de um canteiro;
+    \item Realizar primeira curva à direita;
+    \item Realizar segunda curva à direita;
+    \item Realizar novamente coleta de dados de um canteiro;
+    \item Realizar curva maior.
+  \end{itemize}
+
+  Na figura \ref{fig:start_navigation} encontra-se o corpo do método \textit{start navigation}, o qual
+  é responsável por executar, em sequência, os quatros eventos citados anteriormente até que o circuito
+  seja devidamente concluído (número de canteiros analisados igual ao número total de canteiros).
+
+  \begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{figuras/start_navigation.eps}
+  \caption{\label{fig:start_navigation}Corpo do Método \textit{start navigation}.}
+  \end{center}
+  \end{figure}
+
   \subsection{Informações}
 
   \subsubsection{Unidade de Processamento}
@@ -131,7 +164,7 @@ como serão processados e armazenados os dados coletados das medições.
   \caption{\label{fig:sdcard}Cartão de memória.}
   \end{center}
   \end{figure}
-  
+
   Posteriormente, o acesso aos dados será feito através de uma conexão de  rede
   wireless entre um computador e a Raspberry. Para a comunicação  entre os
   dispositivos será utilizado o protocolo FTP, que é bastante utilizado para
