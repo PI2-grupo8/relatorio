@@ -13,6 +13,27 @@ respeito dos principais aspectos de integração dos subsistemas.
 
 % Talvez quebrar a imagem em 3
 
+O carro está sendo confeccionado no Galpão-FGA. A montagem consistiu em pontos de solda para a fixação das barras do chassi, realizadas pelo técnico soldador especialista.
+
+Em seguida, houve a montagem do sistema de redução, o qual, utilizou-se duas engrenagem e um acoplamento para isso. No eixo da segunda engrenagem, há o eixo traseiro, onde conectou-se as duas rodas.
+
+Para a montagem do sistema de direção, usinou-se um acoplamento para o servo motor no eixo e uma bucha de passagem, onde passou o eixo e os dois enrolamentos que foram utilizados. Cada rolamento ficou na extremidade da bucha, alinhando o eixo em vertical.
+
+Já para o sistema de alimentação, foi utilizado um disjuntor de 16A, além de borners para realizar as ligações em paralelo, distribuído os circuitos para os drivers e para o arduino. Assim, ficou conectado o motor de tração e o servo motor de direção (na saída de tensão 5V) em um driver, e o outro motor de perfuração e a Raspberry (na saída de tensão 5V) em outro driver.
+
+Para isso, prendeu-se os borners modelo sack em um trilho din, e conectou os fios de utilizando terminais de 2,5 $mm^2$. A utilização do fio com essa bitola, garante que não haverá sobreaquecimento dos fios nas correntes e na tensão de trabalho.
+
+Atualmente, o carro encontra-se nas etapas finais de montagem, figura \ref{fig:carro_quase_montado}, faltando apenas a fixação do assoalho e do sistema de direção. Enquanto o sistema de alimentação já foi montado e validado, através de testes de tensão, fluxo de corrente e de carga. O teste em laboratório, resultou em uma carga de 45 kgs sem que houvesse redução da velocidade, do torque ou da movimentação. Enquanto o sistema de direção apresentou certa facilidade para rotacionar a roda e o eixo.
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=1\textwidth]{figuras/carro_quase_montado.eps}
+\caption{\label{fig:carro_quase_montado}Carro sem fixação do assoalho e do sistema de direção.}
+\end{center}
+\end{figure}
+
+Para nossas atividades futuras ficou definido cobrir o veículo com a fibra de vidro, acoplar todos os componentes eletrônicos nos seus locais definidos e por fim realizar os testes finais em campo, validando assim nosso projeto.
+
 O subsistema de Mecânica e alimentação é composto por tração, direção, estrutura e alimentação. O motor
 responsável pela tração das rodas será controlado por um driver, que por sua vez receberá sinais lógicos da placa Arduino
 para a determinação do sentido de rotação e velocidade angular. Este driver será alimentado pela bateria do sistema conforme
@@ -20,7 +41,7 @@ figura \ref{fig:visao_geral} (diagrama unifilar). Em conjunto aos elementos de t
 a compor o chassi do veículo. Por fim, os elementos mencionados serão integrados à estrutura, mais especificamente à carroceria.
 
 Vale ressaltar que o projeto da carroceria deve considerar em seu espaço interno todos os componentes eletrônicos, de
-alimentação e de perfuração. 
+alimentação e de perfuração.
 
 Sendo assim, percebe-se que o subsistema de perfuração e coleta apresenta alto grau de integração com os demais subsistemas.
 Tendo como núcleo central a placa Arduino, esse subsistema tem como objetivo realizar a coleta dos dados provenientes dos
@@ -50,7 +71,7 @@ Dado a execução das atividades planejadas ate o úlmtimo plano de controle e a
 
 Em relação as integrações neste subsistema, a parte do sistema para o usuário não possui muita dependência com as outras partes do projeto. A depedência que possui é a parte de envio e recebimento dos dados através da rede usando os protocolos tcp e ftp que já foram explicados anteriormente neste trabalho.
 
-Assim, para a integração, depende apenas do servidor que está rodando na raspberry enviar e receber corretamente os arquivos com os dados. Desse modo a integração dessa parte já foi feita dentro deste subsistema, onde posteriormente será realizado os testes do envio e recebimento dos arquivos via ftp e envio do comando via tcp que vai dar o start no carro. 
+Assim, para a integração, depende apenas do servidor que está rodando na raspberry enviar e receber corretamente os arquivos com os dados. Desse modo a integração dessa parte já foi feita dentro deste subsistema, onde posteriormente será realizado os testes do envio e recebimento dos arquivos via ftp e envio do comando via tcp que vai dar o start no carro.
 
 Os sensores já conseguem coletar os dados, e mandar para a raspberry, então será realizado os testes primeiramente se o sistema consegue receber os arquivos com os dados coletados dos sensores de umidade do solo, umidade do ar e temperatura do ar. Depois testar se o servidor na raspberry consegue receber os arquivo com os dados de .... e o comando que inicia o carro.
 

@@ -60,7 +60,7 @@ Sua implementação foi realizada utilizando a biblioteca aberta “ultrassonic.
     também conhecido como regra da mão direita ou esquerda, é válido para percursos conexos, onde todas as paredes são ligadas entre si, mantendo a mão próxima a parede do labirinto em
     que se inclui, garantindo assim que o corpo não se perca e finalize
     o percurso. O principal problema desta regra ocorre quando um percurso
-    possui loops de passagens que projetem uma trajetória sem fim. 
+    possui loops de passagens que projetem uma trajetória sem fim.
 
     \begin{figure}[!htbp]
     \begin{center}
@@ -89,6 +89,47 @@ Sua implementação foi realizada utilizando a biblioteca aberta “ultrassonic.
     necessidade de um material barato e de fácil instalação/manuseio.
     Desta forma, o plástico e a madeira foram os materiais escolhidos para compor os obstáculos
     que irão ajudar o veículo a percorrer o trajeto.
+
+  \subsection{Máquina de Estados para \textit{Wall Follower}}
+  Para a execução do código que fará com que o carrinho não colida na parede, elaborou-se uma máquina de estados para que os dois sensores de ultrassom se interajam entre si.
+
+  O primeiro estado será responsável por acionar os sensores e enviar o comando para que eles coletem os dados.
+
+  De acordo com os dados coletados pelos sensores, o próximo processo será uma função que realizará o cálculo para medição distância que cada sensor estará da parede definida.
+
+  Inicialmente estabeleceram-se 3 distâncias para que cada sensor ultrassônico defina em que posição ele estará, sabendo-se que haverá um sensor (S1) na parte frontal e outro (S2) na parte traseira do veículo e que a parede de referência será a parede da direita.
+
+  Assim definiu-se três posições para cada sensor, perto, meio, longe. Tendo em vista essas definições, o carrinho poderá estar posicionado em nove diferentes posições possíveis, como ilustra a Tabela \ref{tab:state_wall_follower}.
+
+  \begin{table}[!htbp]
+  \centering
+  \caption{Tabela de Estados \textit{Wall Follower}}
+  \label{tab:state_wall_follower}
+  \begin{tabular}{|c|c|c|}
+  \hline
+  Distância Sensor S1 & Distância Sensor S2 & Estado \\ \hline
+  Perto               & Perto                & Left- \\ \hline
+  Perto               & Meio                 & Left  \\ \hline
+  Perto               & Longe                & Left+ \\ \hline
+  Meio                & Perto               & Right  \\ \hline
+  Meio                & Meio                & D.N.   \\ \hline
+  Meio                & Longe               & Left   \\ \hline
+  Longe               & Longe               & Right- \\ \hline
+  Longe               & Meio                & Right  \\ \hline
+  Longe               & Perto              & Right+  \\ \hline
+  \end{tabular}
+  \end{table}
+
+  A partir das posições que o veículo poderá estar, deverá se mover em um determinado ângulo para que volte ao centro do caminho e não se choque em nenhuma parede. Então foi definido 7 estados para a execução do \textit{wall follower}: \textit{Left}-, \textit{Left}, \textit{Left}+, D.N.(Do nothing), \textit{Right}-, \textit{Right}, \textit{Right}+. Cada estado enviará um comando ao servo motor para que ele vire em um determinado ângulo:
+  \begin{itemize}
+    \item \textit{Left}-: envia um comando ao servo motor (motor que muda a direção) para ir à esquerda suavemente, pois o carrinho não está muito virado para a direita, porém está próximo da parede direita;
+    \item \textit{Left}: envia um comando ao servo motor para virar à esquerda moderadamente, pois o carrinho está levemente virado para a direita, logo ele tem que virar pra esquerda com mais urgência;
+    \item \textit{Left}+: envia um comando ao servo motor para virar à esquerdo, porém com a maior angulação possível, devido o veículo estar quase perpendicular à parede;
+    \item \textit{Do Nothing} (D.N.): nesse estado o veículo está a posição desejada para continuar seguido reto, logo não será necessário virar para nenhum lado;
+    \item \textit{Right}-: estado em que o veículo deverá virar moderadamente para a direita, pois ele está paralelo a parede, porém perto da parede esquerda;
+    \item \textit{Right}: envia um sinal ao servo motor para que ele vire para a direita mais que o “\textit{Right}-“;
+    \item \textit{Right}+: esse estado o veículo estará virado para a esquerda quase perpendicular à parede, precisando virar o máximo para a direita, para que volte a posição correta.
+  \end{itemize}
 
   \subsection{Solução Algoritmo}
   O algoritmo de locomoção do veículo, figura \ref{fig:main_algoritmo}, foi escrito em linguagem C e utiliza como base os valores referentes
