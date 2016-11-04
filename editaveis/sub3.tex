@@ -21,7 +21,7 @@ A construção do sensor faz com que o feixe ultrassônico seja emitido em forma
 
 	\begin{figure}[!htbp]
 		\begin{center}
-			\includegraphics[width=.4\textwidth]{figuras/echo.eps}
+			\includegraphics[width=.7\textwidth]{figuras/echo.eps}
 			\caption{Sinais de envio e retorno}
 		\end{center}
 	\end{figure}
@@ -34,18 +34,36 @@ $$
 
 	\begin{figure}[!htbp]
 		\begin{center}
-			\includegraphics[width=.4\textwidth]{figuras/hcsr04_signals.eps}
+			\includegraphics[width=.7\textwidth]{figuras/hcsr04_signals.eps}
 			\caption{Sinais de envio e retorno}
 		\end{center}
 	\end{figure}
 
-Sua implementação foi realizada utilizando a biblioteca aberta “ultrassonic.h” fornecida pela Adafruit. Além disso, as ligações entre o sensor e o micro controlador foram realizadas conforme a figura abaixo:
+\paragraph{Implementação}
+Sua implementação foi realizada utilizando a biblioteca aberta \texttt{Ultrasonic.h}.
+Além disso, as ligações entre o sensor e o microcontrolador foram realizadas conforme a figura~\ref{fig:hcsr04test}.
 
 	\begin{figure}[!htbp]
 		\begin{center}
-			\includegraphics[width=.4\textwidth]{figuras/ultrasonic_test.eps}
-			\caption{Sinais de envio e retorno}
+			\includegraphics[width=.7\textwidth]{figuras/ultrasonic_test.eps}
+			\caption{\label{hcsr04test}Circuito implementado.}
 		\end{center}
+	\end{figure}
+
+	\paragraph{Testes}
+
+	\begin{figure}[!htbp]
+	\begin{center}
+	\includegraphics[width=.7\textwidth]{figuras/hcsr04_arduino.eps}
+	\caption{\label{fig:hcsr04ardu}Aquisição dos dados dos sensores ultrassônicos com o microcontrolador.}
+	\end{center}
+	\end{figure}
+
+	\begin{figure}[!htbp]
+	\begin{center}
+	\includegraphics[width=\textwidth]{figuras/hcsr04_raspberry.eps}
+	\caption{\label{fig:hcsr04rasp}Aquisição dos dados dos sensores ultrassônicos pela Raspberry Pi.}
+	\end{center}
 	\end{figure}
 
 
@@ -88,7 +106,7 @@ Sua implementação foi realizada utilizando a biblioteca aberta “ultrassonic.
     que irão ajudar o veículo a percorrer o trajeto.
 
   \subsection{Máquina de Estados para \textit{Wall Follower}}
-  Para a execução do código que fará com que o carrinho não colida na parede, elaborou-se uma máquina de estados para que os dois sensores de ultrassom se interajam entre si.
+  Para a execução do código que fará com que o carrinho não colida na parede, elaborou-se uma máquina de estados para que os dois sensores de ultrassom interajam entre si.
 
   O primeiro estado será responsável por acionar os sensores e enviar o comando para que eles coletem os dados.
 
