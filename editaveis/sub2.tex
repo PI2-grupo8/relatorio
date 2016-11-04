@@ -208,11 +208,81 @@
 
 		\paragraph{Implementação}
 
-			
+			Este sensor necessita somente de uma entrada analógica para informar
+			a queda de tensão devido a resistividade do solo. Os valores possíveis
+			são de 0 a 1023 pois o ADC do Arduino Mega2560 é de 10 bits.
 
+			Com os dados da calibração nos pontos citados acima é possível
+			interpolar uma função na forma exponencial na forma
+			\[
+				U = a H^b,
+			\]
+			onde $U$ é a umidade gravimétrica em $\%$ do conteúdo de água
+			no solo e $H$ é a leitura do sensor. As constantes $a$ e $b$
+			são encontradas utizando o método dos mínimos quadrados
+			no logaritmo de ambos lados da equação, resultando em
+			\[
+				\ln U = \ln a + b \ln H.
+			\]
+
+			As medidas de umidade $U_i$ e das leituras do sensor $H_i$
+			formam os vetores $\mathbf{U} = [U_1~U_2~\cdots~U_N]^T$ e
+			$\mathbf{H} = [H_1~H_2~\cdots~H_N]^T$. Formando a matriz
+			\[
+				A =
+				\begin{pmatrix}
+					1 & \ln H_1 \\
+					1 & \ln H_2 \\
+					\vdots & \vdots \\
+					1 & \ln H_N
+				\end{pmatrix} = [ \mathbf{1}~\ln \mathbf{H} ]
+			\]
+			é possível encontrar os parâmetros $\mathbf{\theta} = [\theta_1~\theta_2]^T$
+			resolvendo o problema de otimização
+			\[
+				\underset{\mathbf{\theta}}{\textrm{minimizar}}~|| A\mathbf{\theta} - \mathbf{U} ||_2
+			\]
+			que tem como solução $\theta = (A^TA)^{-1}A^T\mathbf{U}$.
+			Por fim, $a = e^{\theta_1}$ e $b = \theta_2$.
+
+			Com estes parâmetros é possível correlacionar os valores do
+			sensor com a umidade do solo, e este processo deve ser realizado
+			com cada tipo de solo.
+			O caráter exponencial desta correlação se justifica em estudos
+			como em \citeonline{munoz2011influence}.
+
+		\newpage
 		\paragraph{Testes}
 
-			
+			Utilizando a configuração apresentada na figura~\ref{fig:fc28test} é
+			possível medir alguns valores do sensor em função do nível de
+			umidade do solo. Um exemplo de interpolação dos dados é mostrado
+			na figura~\ref{fig:calibration}.
+
+			\begin{figure}[!htbp]
+			\begin{center}
+			\includegraphics[width=.7\textwidth]{figuras/fc28_test.eps}
+			\caption{\label{fig:fc28test}Configuração utilizada para os testes do higrômetro.}
+			\end{center}
+			\end{figure}
+
+			\begin{figure}[!htbp]
+			\begin{center}
+			\includegraphics[width=.7\textwidth]{figuras/calibration.eps}
+			\caption{\label{fig:calibration}Exemplo de interpolação dos dados para a calibração do sensor.}
+			\end{center}
+			\end{figure}
+
+			Os valores lidos diretamente pelo microcontrolador são mostrados na figura~\ref{fig:fc28ardu}.
+			Estas leituras são passadas diretamente para a Raspberry Pi para então serem
+			calculadas com base nos parâmetros de calibração.
+
+			\begin{figure}[!htbp]
+			\begin{center}
+			\includegraphics[width=.7\textwidth]{figuras/fc28_arduino.eps}
+			\caption{\label{fig:fc28ardu}Dados do higrômetro obtidos pelo microncontrolador.}
+			\end{center}
+			\end{figure}
 % }}}
 
   % Módulo de controle (Arduino Mega2560) {{{
