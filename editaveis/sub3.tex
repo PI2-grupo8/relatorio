@@ -59,10 +59,10 @@ como serão processados e armazenados os dados coletados das medições.
     que irão ajudar o veículo a percorrer o trajeto.
 
   \subsection{Solução Algoritmo}
-  O algoritmo de locomoção do veículo, figura \ref{fig:main_algoritmo}, foi escrito em linguagem C e utiliza como base os valores refentes
+  O algoritmo de locomoção do veículo, figura \ref{fig:main_algoritmo}, foi escrito em linguagem C e utiliza como base os valores referentes
   ao total de canteiros, quantidade de medições por canteiro e distância entre as medições, os quais
   encontram-se em um arquivo denominado "\textit{settings.conf}". Inicialmente são lidos e armazenados tais valores
-  em três variáveis, logo em seguida é lido o nome do \textit{device driver} que realizará a comunicação com o Arduino (argumento passado quando o programa é executado). Tendo conhecimento desse \textit{device driver} é iniciado uma UART que possibilita a comunicação do programa em C com o Arduino, ou seja, a possibilidade de ler dados dos sensores e enviar comandos que o Arduino irá realizar. É chamado o método \textit{start navigation} que irá tratar todo o resto do percurso e ao fim do mesmo é fechado o arquivo \textit{settings.conf} e finalizada a UART.
+  em três variáveis, logo em seguida é lido o nome do \textit{device driver} que realizará a comunicação com o Arduino (argumento passado quando o programa é executado). Tendo conhecimento desse \textit{device driver} é iniciado uma UART que possibilita a comunicação do programa em C com o Arduino, ou seja, a possibilidade de ler dados dos sensores e enviar comandos que o Arduino irá realizar. É chamado o método \textit{start\_navigation} que irá tratar todo o resto do percurso e ao fim do mesmo é fechado o arquivo \textit{settings.conf} e finalizada a UART.
 
   \begin{figure}[!htbp]
   \begin{center}
@@ -80,19 +80,43 @@ como serão processados e armazenados os dados coletados das medições.
     \item Realizar curva maior.
   \end{itemize}
 
-  Na figura \ref{fig:start_navigation} encontra-se o corpo do método \textit{start navigation}, o qual
+  Na figura \ref{fig:start_navigation} encontra-se o corpo do método \textit{start\_navigation}, o qual
   é responsável por executar, em sequência, os eventos citados anteriormente até que o circuito
   seja devidamente concluído (número de canteiros analisados igual ao número total de canteiros).
 
   \begin{figure}[!htbp]
   \begin{center}
   \includegraphics[width=1\textwidth]{figuras/start_navigation.eps}
-  \caption{\label{fig:start_navigation}Corpo do Método \textit{start navigation}.}
+  \caption{\label{fig:start_navigation}Corpo do Método \textit{start\_navigation}.}
   \end{center}
   \end{figure}
 
-  O princípio do algoritmo de \textit{Wall Follower} encontra-se no método \textit{check wall distance}, figura \ref{fig:check_wall_distance}, uma vez que são lidos os dados dos sensores ultrassônicos e
-  verificado em qual estado o veículo encontra-se, assim, com base nesse estado, será chamada uma função que irá direcionar o veículo para uma distância segura.
+  A função \textit{complete\_line}, figura \ref{fig:complete_line}, é responsável por verificar a distância percorrida pelo veículo, mantê-lo
+  seguro em relação à parede e realizar a coleta de dados referentes a um canteiro. A parte de verificação
+  da distância percorrida pelo veículo ainda está em desenvolvimento, porém, a mesma partirá do princípio
+  de iniciar um timer, coletar a velocidade instantânea do veículo e calcular a distância que foi percorrida.
+  Após o veículo locomover-se a distância necessária para uma medição, que
+  será realizada através da função \textit{start\_drill}, o processo se repetirá até que todas as medições da fileira sejam atingidas. Ao final desse processo, o número de canteiros medidos será incrementado em uma unidade.
+
+  \begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{figuras/complete_line.eps}
+  \caption{\label{fig:complete_line}Corpo do Método \textit{complete\_line}.}
+  \end{center}
+  \end{figure}
+
+  O princípio do algoritmo de \textit{Wall Follower} encontra-se no método \textit{check\_wall\_distance}, figura \ref{fig:check_wall_distance}, uma vez que são lidos os dados dos sensores ultrassônicos com auxílio
+  da função \textit{read\_sonar} e verificado em qual estado o veículo encontra-se, assim, com base nesse estado, será chamada uma função que irá direcionar o veículo para uma distância segura. Como a função de direcionamento do veículo ainda não foi implementada, apenas é imprimido na tela a distância de cada um dos sensores ultrassônicos.
+
+  \begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{figuras/check_wall_distance.eps}
+  \caption{\label{fig:check_wall_distance}Corpo do Método \textit{check\_wall\_distance}.}
+  \end{center}
+  \end{figure}
+
+  As funções \textit{make\_first\_curve}, \textit{make\_second\_curve} e \textit{make\_big\_curve} ainda não
+  foram implementadas.
 
   \subsection{Informações}
 
