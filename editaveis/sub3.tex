@@ -129,6 +129,33 @@
   \end{center}
   \end{figure}
 
+  \paragraph{UART}
+	Considerando a troca de informações entre as plataformas de controle e
+	processamento (Arduino e Raspberry Pi) surge a necessidade de definir
+	um protocolo de comunicação comum. Centenas de protocolos de comunicação
+	são capazes de viabilizar essa troca de dados. Considerando a universalidade
+	e disponibilidade de recursos de hardware, optou-se por utilizar um
+	protocolo serial a partir do UART.
+
+	Um UART (universal asynchronous receiver/transmitter) é um bloco de circuitos
+	responsável pela implementação da comunicação serial. Essencialmente, o UART
+	age como um intermediário entre interfaces paralelas e em série. Conforme a
+	figura~\ref{fig:uart}, uma das extremidades do UART é um barramento de oito linhas de
+	dados (mais alguns pinos de controle), a outra é composta pelos fios de
+	transmissão e recepção em série (TX e RX).
+
+	\begin{figure}[!htbp]
+	\begin{center}
+	\includegraphics[width=.6\textwidth]{figuras/uart.eps}
+	\caption{\label{fig:uart}Modelo simplificado da UART (fonte:~\citeonline{uartsparkfun}).}
+	\end{center}
+	\end{figure}
+
+	Sistemas operacionais como o Linux contém bibliotecas nativas como a
+	\texttt{termio.h} onde podem ser definidos o \textit{BAUD rate},
+	segundos de espera entre bytes, números de bytes a ser lidos, etc.
+	Essa é mais uma vantagem de utilizar tal protocolo de comunicação.
+
   \subsubsection{Armazenamento dos Dados}
   Os dados de configurações do veículo e resultados das medições serão armazenados
   em um cartão de memória inserido na Raspberry Pi, em um diretório definido.
