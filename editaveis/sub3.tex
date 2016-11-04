@@ -19,41 +19,9 @@ como serão processados e armazenados os dados coletados das medições.
   ultrassom e infravermelho, os quais demonstraram ser uma solução viável e foram alvo de
   estudos mais aprofundados.
 
-  Inicialmente, a opção baseada em ultrassom se mostrou mais adequada, porém foi possível perceber que os principais sensores
-  comerciais que se baseavam nesse princípio possuíam uma faixa de detecção bastante re-
-  duzida. Sendo assim, foi escolhido um sensor de proximidade baseado em infravermelho
-  apresentado na figura \ref{fig:infrared}.
-
-  \begin{figure}[!htbp]
-  \begin{center}
-  \includegraphics[width=.7\textwidth]{figuras/infrared.eps}
-  \caption{\label{fig:infrared}Sensor de proximidade infravermelho.}
-  \end{center}
-  \end{figure}
-
-  O princípio de funcionamento deste sensor é o princípio da triangulação.
-  Um feixe de luz é emitido por um diodo laser ou um LED infravermelho.
-  Ao ser refletido por um objeto, esse raio é detectado por um PSD
-  (\textit{Position Sensing Device} -- Dispositivo de Monitoramento de Posição).
-  De acordo com a distância do objeto que refletiu a luz, esse raio incide
-  de modo diferente no PSD. A figura~\ref{fig:infrared_func} ilustra o
-  princípio da triangulação.
-
-  \begin{figure}[!htbp]
-  \begin{center}
-  \includegraphics[width=.7\textwidth]{figuras/infrared_func.eps}
-  \caption{\label{fig:infrared_func}Princípio da triangulação.}
-  \end{center}
-  \end{figure}
-
-  A escolha do elemento foi motivada pela capacidade de detecção
-  de proximidade ser adequada para o funcionamento do algoritmo
-  de lcomoção, mais especificamente entre 3 e 80cm.  Além disso,
-  este elemento apresenta pouca interferência com a luz visível e
-  possui um interfaceamento simples com um microcontrolador.
 
   \subsection{Algoritmo de Locomoção}
-    Dado a utilização de sensores infravermelho e a disposição da lavoura de morango
+    Dado a utilização de sensores de ultrassom e a disposição da lavoura de morango
     é possível identificar um típico problema denominado \textit{Wall Follower}.
 
     Segundo \cite{huang2009}, \textit{Wall Follower},
