@@ -6,7 +6,6 @@
 
   \subsubsection{Ultrassom (HC-SR04)}
 
-<<<<<<< HEAD
 Considerando a necessidade de informações referentes à distância com a finalidade de auxiliar a orientação e navegação autônoma do veículo conforme as rotinas estabelecidas pelo algoritmo “\textit{Wall Follower}”, que será discutido detalhadamente, foram discutidos modelos de sensores de distância capazes de preencher os requisitos de navegação.  Inicialmente havia-se optado por um sensor baseado em infravermelho, a partir do princípio de triangulação. Posteriormente essa opção não foi validada devido ao caráter binário do sensor. Sendo assim, foi iniciada uma nova busca, e por fim, foi escolhido o sensor de distância ultrassônico HC-SR04.
 
 		\begin{figure}[!htbp]
@@ -27,7 +26,7 @@ A construção do sensor faz com que o feixe ultrassônico seja emitido em forma
 		\end{center}
 	\end{figure}
 
-O HC-SR04 foi escolhido por apresentar um alcance de 2cm a 4m com uma precisão de 3mm, apresenta uma tensão de operação de 5V, e um ângulo de efeito de 15$^°$. Seu funcionamento é baseado no envio de um pulso de 10$\mu$s, indicando o início da transmissão de dados. Depois disso, são enviados 8 pulsos de 40 KHz e o sensor aguarda o retorno, para determinar a distância entre o sensor e o objeto, utilizando a equação seguinte:
+O HC-SR04 foi escolhido por apresentar um alcance de 2cm a 4m com uma precisão de 3mm, apresenta uma tensão de operação de 5V, e um ângulo de efeito de 15$^{\circ}$. Seu funcionamento é baseado no envio de um pulso de 10$\mu$s, indicando o início da transmissão de dados. Depois disso, são enviados 8 pulsos de 40 KHz e o sensor aguarda o retorno, para determinar a distância entre o sensor e o objeto, utilizando a equação seguinte:
 
 $$
 \textrm{Distância} = \frac{\textrm{Tempo echo em nível alto} \times \textrm{Velocidade do som}}{2}
@@ -48,9 +47,7 @@ Sua implementação foi realizada utilizando a biblioteca aberta “ultrassonic.
 			\caption{Sinais de envio e retorno}
 		\end{center}
 	\end{figure}
-=======
 
->>>>>>> origin/master
 
   \subsection{Algoritmo de Locomoção}
     Dado a utilização de sensores de ultrassom e a disposição da lavoura de morango
