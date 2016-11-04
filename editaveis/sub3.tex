@@ -81,12 +81,87 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
 	possui um alcance de $\pm 250^{\circ}/s$.
 
 	\paragraph{Implementação}
+
+	A biblioteca utilizada para a comunicação com a IMU foi a \texttt{Wire.h}.
+	Esta biblioteca já está presente na implementação padrão da IDE do Arduino
+	e pode ser utilizada prontamente.
+
+	\newpage
 	\paragraph{Testes}
+
+	O circuito utilizado para o teste da IMU está mostrado na figura~\ref{fig:imutest}.
+
+	\begin{figure}[!htbp]
+	\begin{center}
+	\includegraphics[width=.7\textwidth]{figuras/imu_test.eps}
+	\caption{\label{fig:imutest}Circuito utilizado para o teste da IMU.}
+	\end{center}
+	\end{figure}
+
+	Os resultados dos testes utilizando somente o microcontrolador está mostrado na
+	figura~\ref{fig:imuardu}.
+
+	\begin{figure}[!htbp]
+	\begin{center}
+	\includegraphics[width=.7\textwidth]{figuras/imu_arduino.eps}
+	\caption{\label{fig:imuardu}Resultado do teste com o microcontrolador.}
+	\end{center}
+	\end{figure}
+
+	Os resultados dos testes depois da comunicação do microcontrolador com a
+	Raspberry estão mostrados na figura~\ref{fig:imurasp}.
+
+	\begin{figure}[!htbp]
+	\begin{center}
+	\includegraphics[width=\textwidth]{figuras/imu_raspberry.eps}
+	\caption{\label{fig:imurasp}Resultados após a comunicação entre o Arduino e Raspberry Pi.}
+	\end{center}
+	\end{figure}
 
 	\subsubsection{GPS (Adafruit Ultimate)} 
 
+	O módulo GPS é utilizado para correlacionar os dados adquiridos da plantação com
+	os pontos no mapa, e também para restar a posição da IMU para reduzir os erros
+	gerados pela dupla integração dos ruídos.
+
 	\paragraph{Implemetação}
+
+	A comunicação com o módulo é realizada utilizando a biblioteca \texttt{SoftwareSerial.h},
+	devido ao fato de ser necessária a comunicação serial por software e não por
+	hardware visto que a comunicação com a Raspberry já utiliza a porta serial em hardware.
+	O controle do GPS com os comandos NMEA (comando para o módulo GPS que
+	devem ser parseados) foi feira utilizando a bibliteca \texttt{Adafruit\_GPS.h},
+	desenvolvida pela empresa de \textit{hardware open-source} Adafruit.
+
 	\paragraph{Testes}
+
+	O circuito utilizado para teste está mostrado na figura~\ref{fig:gpstest}.
+
+	\begin{figure}[!htbp]
+	\begin{center}
+	\includegraphics[width=.7\textwidth]{figuras/gps_test.eps}
+	\caption{\label{fig:gpstest}Circuito para o teste de GPS.}
+	\end{center}
+	\end{figure}
+
+	O resultado dos testes do GPS com o microcontrolador está mostrado na figura~\ref{fig:gpsardu}.
+
+	\begin{figure}[!htbp]
+	\begin{center}
+	\includegraphics[width=.7\textwidth]{figuras/gps_arduino.eps}
+	\caption{\label{fig:gpsardu}Resultado dos testes com o microcontrolador.}
+	\end{center}
+	\end{figure}
+
+	O resultado dos testes do GPS com o microcontrolador e comunicação com a
+	Raspberry Pi está mostrado na figura~\ref{fig:gpsrasp}.
+
+	\begin{figure}[!htbp]
+	\begin{center}
+	\includegraphics[width=\textwidth]{figuras/gps_raspberry.eps}
+	\caption{\label{fig:gpsrasp}Resultado dos testes após a comunicação com a Raspberry Pi.}
+	\end{center}
+	\end{figure}
 
 
   \subsection{Algoritmo de Locomoção}
