@@ -6,8 +6,47 @@ como serão processados e armazenados os dados coletados das medições.
 
   \subsubsection{Ultrassom (HC-SR04)}
 
+Considerando a necessidade de informações referentes à distância com a finalidade de auxiliar a orientação e navegação autônoma do veículo conforme as rotinas estabelecidas pelo algoritmo “\textit{Wall Follower}”, que será discutido detalhadamente, foram discutidos modelos de sensores de distância capazes de preencher os requisitos de navegação.  Inicialmente havia-se optado por um sensor baseado em infravermelho, a partir do princípio de triangulação. Posteriormente essa opção não foi validada devido ao caráter binário do sensor. Sendo assim, foi iniciada uma nova busca, e por fim, foi escolhido o sensor de distância ultrassônico HC-SR04.
 
+		\begin{figure}[!htbp]
+			\begin{center}
+				\includegraphics[width=.4\textwidth]{figuras/hcsr04.eps}
+				\caption{HC-SR04}
+			\end{center}
+		\end{figure}
 
+O princípio de funcionamento dos sensores ultrassônicos está baseado na emissão de uma onda sonora de alta frequência, e na medição do tempo levado para a recepção do eco produzido quando esta onda se choca com um objeto capaz de refletir o som.
+A detecção do eco incidente, depende de sua intensidade e esta da distância entre o objeto e o sensor ultrassônico. Os sensores ultrassônicos funcionam medindo o tempo de propagação do eco. Isto é, o intervalo de tempo medido entre o impulso sonoro emitido e o eco do mesmo conforme a figura abaixo.
+A construção do sensor faz com que o feixe ultrassônico seja emitido em forma cônica.
+
+	\begin{figure}[!htbp]
+		\begin{center}
+			\includegraphics[width=.4\textwidth]{figuras/echo.eps}
+			\caption{Sinais de envio e retorno}
+		\end{center}
+	\end{figure}
+
+O HC-SR04 foi escolhido por apresentar um alcance de 2cm a 4m com uma precisão de 3mm, apresenta uma tensão de operação de 5V, e um ângulo de efeito de 15$^°$. Seu funcionamento é baseado no envio de um pulso de 10$\mu$s, indicando o início da transmissão de dados. Depois disso, são enviados 8 pulsos de 40 KHz e o sensor aguarda o retorno, para determinar a distância entre o sensor e o objeto, utilizando a equação seguinte:
+
+$$
+\textrm{Distância} = \frac{\textrm{Tempo echo em nível alto} \times \textrm{Velocidade do som}}{2}
+$$
+
+	\begin{figure}[!htbp]
+		\begin{center}
+			\includegraphics[width=.4\textwidth]{figuras/hcsr04_signals.eps}
+			\caption{Sinais de envio e retorno}
+		\end{center}
+	\end{figure}
+
+Sua implementação foi realizada utilizando a biblioteca aberta “ultrassonic.h” fornecida pela Adafruit. Além disso, as ligações entre o sensor e o micro controlador foram realizadas conforme a figura abaixo:
+
+	\begin{figure}[!htbp]
+		\begin{center}
+			\includegraphics[width=.4\textwidth]{figuras/ultrasonic_test.eps}
+			\caption{Sinais de envio e retorno}
+		\end{center}
+	\end{figure}
 
   \subsection{Algoritmo de Locomoção}
     Dado a utilização de sensores de ultrassom e a disposição da lavoura de morango
