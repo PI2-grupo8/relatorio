@@ -31,7 +31,7 @@
   Já para a extensão do sensor para o solo, será utilizado o servo motor Tower
   Pro Mg90s Metal Gear, tendo como base o torque de 2,2 Kg/cm quando operado na faixa de 6V.
 
-% Daqui para a frente quem escreve é o PG {{{
+% Daqui para a frente quem escreve é o PG e o Fagner {{{
 \subsection{Sensoriamento: Coleta}
 
 
@@ -44,7 +44,7 @@
 		\begin{figure}[!htbp]
 		\begin{center}
 		\includegraphics[width=.4\textwidth]{figuras/am2302.eps}
-		\caption{\label{fig:AM2302}Sensor de umidade relativa e temperatura do ar~\cite{aosong}.}
+		\caption{\label{fig:AM2302}Sensor de umidade relativa e temperatura do ar (fonte:~\citeonline{aosong}).}
 		\end{center}
 		\end{figure}
 
@@ -124,77 +124,96 @@
   % }}}
 
   % Sensor de umidade do solo (FC-28) {{{
-  \subsubsection{Sensor de Umidade do Solo (FC-28)}
+	\subsubsection{Sensor de Umidade do Solo (FC-28)}
 
-  O sensor escolhido para a medição da umidade do solo foi o FC-28,
-  tanto pelo baixo custo quanto pelo simples processo de medição.
-  Ele tem como princípio de medição a queda de tensão resultante da
-  passagem de corrente por uma malha resistiva, que no caso seria o solo
-  umedecido.
+		O sensor escolhido para a medição da umidade do solo foi o FC-28 (apresentado
+		na figura~\ref{fig:fc28}),
+		tanto pelo baixo custo quanto pelo simples processo de medição.
+		Ele tem como princípio de medição a queda de tensão resultante da
+		passagem de corrente por uma malha resistiva, que no caso seria o solo
+		umedecido.
 
-  O sensor é constituído por duas linhas de eletrodos que estão
-  sobrepostas a duas placas com terminações pontiagudas para facilitar a
-  penetração do sensor no solo. Uma corrente é injetada em uma das linhas
-  de eletrodos e é medida a queda tensão entre as linhas, que é função da
-  resistência entre os eletrodos que por sua vez é função da quantidade de
-  água e minerais presentes entre os eletrodos. Quando o volume de água no
-   solo entre os eletrodos é baixo, ou seja, quando o solo está seco,
-   a queda de tensão será maior, e quando o solo está umedecido,
-   a queda de tensão é menor.
+		\begin{figure}[!htbp]
+		\begin{center}
+		\includegraphics[width=.5\textwidth]{figuras/higrometer.eps}
+		\caption{\label{fig:fc28}Sensor de umidade do solo.}
+		\end{center}
+		\end{figure}
 
-  Devido ao seu princípio de operação, este sensor mede a quantidade de
-  água no solo de forma indireta, e a calibração do sensor vai de acordo
-  com o que é definido como um solo seco ou úmido em um local, e portanto
-  se faz necessária a calibração do equipamento em campo junto ao
-  responsável pela irrigação.
-  
-  Antes do processo de calibração faz-se necessário saber sobre o processo de obtenção
-  da umidade real do solo em que é preciso seguir os seguintes passos:
-  
-  \begin{itemize}
-  	\item Pegar uma amostra de solo do terreno colocando em um cilindro com um volume conhecido.
-  	\item Secar a amostra de solo com auxílio de um microondas na faixa entre 60\% a 80\% de potência.
-  	\item Esperar o tempo de 240 segundos ou 4 minutos exatos para estabilização da massa do solo.
-  	\item Pesar a amostra de solo seco guardando o valor do peso.
-  	\item Umedecer a amostra de solo seco.
-  	\item Pesar a amostra umedecida guardando o valor do peso.
-  	\item Calcular a umidade volumétrica com os dados do peso do solo seco, peso do solo úmido e volume do cilindro.
-  \end{itemize}
-  
-  Para a secagem da amostra o procedimento padrão adotado é o uso de uma estufa de
-  secagem entre $105~\celsius$ e $115~\celsius$ durante 24 horas para completa secagem da
-  amostra do solo. No entanto, o método utilizando estufa é demorado para apenas
-  obtenção dos dados e existe outro método que se utiliza de um microondas para
-  secagem da amostra. Esse método já foi testado em experiências e comprovadamente
-  funciona tão bem quanto o método de estufa de acordo com \citeonline{tavares2008uso}.
-  
-  Também é possível a partir desse procedimento, obter o valor da umidade gravimétrica que também pode ser usado para calibração do sensor.
-  
-  Para a necessária calibração do sensor de umidade deve-se seguir os seguintes procedimentos:
-  
-  \begin{itemize}
-  	\item Pegar uma amostra do solo com peso aproximado de 100 gramas.
-  	\item Fazer a secagem desta amostra com auxílio do microondas com potência entre 60\% a 80\%.
-  	\item Esperar o tempo de 240 segundos ou 4 minutos exatos para estabilização da massa do solo.
-  	\item Pesar a amostra de solo seco e verificar se o mesmo está com 100 gramas.
-  	\item Caso dê um valor acima, retirar o excesso até atingir o valor de 100 gramas, caso não atinja esse valor, será necessário completar a amostra e repetir o processo de secagem.
-  	\item Pegar uma amostra de água destilada com peso de 5 gramas e umedecer a amostra.
-  	\item Misturar bem à amostra até obter uma amostra homogênea.
-  	\item Realizar a medição dessa amostra com o sensor de umidade e obter o valor.
-  	\item Os valores dos pesos do solo e da água passados são intencionais, pois com estes valores, dará um valor de umidade gravimétrica de 5\%.
-  	\item O valor obtido da medida do sensor com o valor da umidade gravimétrica a 5\% indicará que para esta umidade gravimétrica o valor da medida do sensor é quivalente.
-  	\item Repetir esse procedimento para amostra de solo com 10\%, 15\%, 20\%, 25\%, 30\%, 40\%, 50\% e 60\%, sendo estas porcentagens equivalentes ao valor do peso da água, e comparar os valores da umidade gravimétrica com os valores de medição do sensor.
-  \end{itemize}
-  
-  Dessa forma saberemos os valores equivalentes a essas porcentagens e o sensor estará calibrado, indocando que para um dado valor de medida de umidade irá equivaler ao valor da porcentagem de umidade gravimétrica do solo.
+		O sensor é constituído por duas linhas de eletrodos que estão
+		sobrepostas a duas placas com terminações pontiagudas para facilitar a
+		penetração do sensor no solo. Uma corrente é injetada em uma das linhas
+		de eletrodos e é medida a queda tensão entre as linhas, que é função da
+		resistência entre os eletrodos que por sua vez é função da quantidade de
+		água e minerais presentes entre os eletrodos. Quando o volume de água no
+		solo entre os eletrodos é baixo, ou seja, quando o solo está seco,
+		a queda de tensão será maior, e quando o solo está umedecido,
+		a queda de tensão é menor.
 
-  \begin{figure}[!htbp]
-  \begin{center}
-  \includegraphics[keepaspectratio=true,scale=0.3]{figuras/higrometer.eps}
-  \caption{\label{DHT11}Sensor de umidade do solo}
-  \end{center}
-  \end{figure}
-  % }}}
+		Devido ao seu princípio de operação, este sensor mede a quantidade de
+		água no solo de forma indireta, e a calibração do sensor vai de acordo
+		com o que é definido como um solo seco ou úmido em um local, e portanto
+		se faz necessária a calibração do equipamento em campo junto ao
+		responsável pela irrigação.
+
+		% Rotina de calibração (Fagner, 2016) {{{
+		Antes do processo de calibração faz-se necessário saber sobre o processo de obtenção
+		da umidade real do solo em que é preciso seguir os seguintes passos:
+
+		\begin{itemize}
+			\item Pegar uma amostra de solo do terreno colocando em um cilindro com um volume conhecido.
+			\item Secar a amostra de solo com auxílio de um microondas na faixa entre 60\% a 80\% de potência.
+			\item Esperar o tempo de 240 segundos ou 4 minutos exatos para estabilização da massa do solo.
+			\item Pesar a amostra de solo seco guardando o valor do peso.
+			\item Umedecer a amostra de solo seco.
+			\item Pesar a amostra umedecida guardando o valor do peso.
+			\item Calcular a umidade volumétrica com os dados do peso do solo seco, peso do solo úmido e volume do cilindro.
+		\end{itemize}
+
+		Para a secagem da amostra o procedimento padrão adotado é o uso de uma estufa de
+		secagem entre $105~\celsius$ e $115~\celsius$ durante 24 horas para completa secagem da
+		amostra do solo. No entanto, o método utilizando estufa é demorado para apenas
+		obtenção dos dados e existe outro método que se utiliza de um microondas para
+		secagem da amostra. Esse método já foi testado em experiências e comprovadamente
+		funciona tão bem quanto o método de estufa de acordo com \citeonline{tavares2008uso}.
+
+		Também é possível a partir desse procedimento, obter o valor da umidade gravimétrica
+		que também pode ser usado para calibração do sensor.
+
+		Para a necessária calibração do sensor de umidade deve-se seguir os seguintes procedimentos:
+
+		\begin{itemize}
+			\item Pegar uma amostra do solo com peso aproximado de 100 gramas.
+			\item Fazer a secagem desta amostra com auxílio do microondas com potência entre 60\% a 80\%.
+			\item Esperar o tempo de 240 segundos ou 4 minutos exatos para estabilização da massa do solo.
+			\item Pesar a amostra de solo seco e verificar se o mesmo está com 100 gramas.
+			\item Caso dê um valor acima, retirar o excesso até atingir o valor de 100 gramas,
+				caso não atinja esse valor, será necessário completar a amostra e repetir o processo de secagem.
+			\item Pegar uma amostra de água destilada com peso de 5 gramas e umedecer a amostra.
+			\item Misturar bem a amostra até obter uma amostra homogênea.
+			\item Realizar a medição dessa amostra com o sensor de umidade e obter o valor.
+			\item Os valores dos pesos do solo e da água passados são intencionais, pois com
+				estes valores, dará um valor de umidade gravimétrica de 5\%.
+			\item O valor obtido da medida do sensor com o valor da umidade gravimétrica a
+				5\% indicará que para esta umidade gravimétrica o valor da medida do sensor é equivalente.
+			\item Repetir esse procedimento para amostra de solo com 10\%, 15\%, 20\%, 25\%,
+				30\%, 40\%, 50\% e 60\%, sendo estas porcentagens equivalentes ao valor do peso
+				da água, e comparar os valores da umidade gravimétrica com os valores de medição do sensor.
+		\end{itemize}
+
+		Dessa forma saberemos os valores equivalentes a essas porcentagens e o sensor
+		estará calibrado, endoçando que para um dado valor de medida de umidade irá
+		equivaler ao valor da porcentagem de umidade gravimétrica do solo.
+		% }}}
+
+		\paragraph{Implementação}
+
+			
+
+		\paragraph{Testes}
+
+			
+% }}}
 
   % Módulo de controle (Arduino Mega2560) {{{
   \subsubsection{Módulo de Controle (Arduino Mega2560)}
