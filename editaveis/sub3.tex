@@ -66,6 +66,28 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
 	\end{center}
 	\end{figure}
 
+	\subsubsection{IMU (MPU-6050)}
+
+	Para mensurar a distância, velocidade e posicionamento do carro
+	foi utilizado um acelerômetro e giroscópio integrados em uma
+	única placa que contém uma unidade de medição inercial (IMU na
+	sigla em inglês). Este módulo é o MPU-6050, e a comunicação
+	com o sensor é pelo protocolo I2C.
+
+	O sensor possui 9 graus de liberdade, aceleração em 3 eixos ortogonais
+	e velocidade angular em 3 eixos ortogonais.
+	O acelerômetro possui 16 bits para cada eixo, assim como o giroscópio.
+	O acelerômetro tem um alcance de $\pm 2g$ e o giroscópio
+	possui um alcance de $\pm 250^{\circ}/s$.
+
+	\paragraph{Implementação}
+	\paragraph{Testes}
+
+	\subsubsection{GPS (Adafruit Ultimate)} 
+
+	\paragraph{Implemetação}
+	\paragraph{Testes}
+
 
   \subsection{Algoritmo de Locomoção}
     Dado a utilização de sensores de ultrassom e a disposição da lavoura de morango
