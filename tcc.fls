@@ -1,0 +1,154 @@
+PWD C:/Users/Artur Schütte/Documents/GitHub/relatorio
+INPUT C:/Users/Artur Schütte/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt
+INPUT tcc.tex
+OUTPUT tcc.log
+INPUT fixos/pacotes.tex
+INPUT fixos/pacotes.tex
+INPUT C:/Users/Artur Schütte/AppData/Roaming/MiKTeX/2.9/tex/latex/abntex2/abntex2.cls
+INPUT C:/Users/Artur Schütte/AppData/Roaming/MiKTeX/2.9/tex/latex/abntex2/abntex2.cls
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/ifthen.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/ifthen.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/memoir/memoir.cls
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/memoir/memoir.cls
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/ifetex/ifetex.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/ifetex/ifetex.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/ifetex/ifetex.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/plain/ifetex/ifetex.tex
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/oberdiek/ifluatex.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/oberdiek/ifluatex.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/oberdiek/ifluatex.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/memoir/mem12.clo
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/memoir/mem12.clo
+INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/cm/cmr12.tfm
+INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/memoir/mempatch.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/memoir/mempatch.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/memoir/mempatch.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/textcase/textcase.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/textcase/textcase.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/hyperref/hyperref.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/hyperref/hyperref.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/oberdiek/hobsub-generic.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/oberdiek/hobsub-generic.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/graphics/keyval.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/graphics/keyval.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/oberdiek/auxhook.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/oberdiek/auxhook.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/hyperref/pd1enc.def
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/hyperref/pd1enc.def
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/00miktex/hyperref.cfg
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/00miktex/hyperref.cfg
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/url/url.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/url/url.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/memoir/memhfixc.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/memoir/memhfixc.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/hyperref/hpdftex.def
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/hyperref/hpdftex.def
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/oberdiek/bookmark.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/oberdiek/bookmark.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/oberdiek/bkm-pdftex.def
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/oberdiek/bkm-pdftex.def
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/babel/babel.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/babel/babel.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/arabi/bblopts.cfg
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/arabi/bblopts.cfg
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/babel-english/english.ldf
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/babel-spanish/spanish.ldf
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/babel-english/english.ldf
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/babel-english/english.ldf
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/generic/babel/babel.def
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/babel-french/frenchb.ldf
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/babel-french/frenchb.ldf
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/babel-spanish/spanish.ldf
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/babel-spanish/spanish.ldf
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/babel-portuges/portuges.ldf
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/babel-portuges/portuges.ldf
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/carlisle/scalefnt.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/carlisle/scalefnt.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/enumitem/enumitem.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/enumitem/enumitem.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/tools/calc.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/tools/calc.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/cmap/cmap.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/cmap/cmap.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/lm/lmodern.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/lm/lmodern.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/fontenc.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/fontenc.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/t1enc.def
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/t1enc.def
+INPUT C:/Program Files (x86)/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecrm1200.tfm
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/cmap/t1.cmap
+OUTPUT tcc.pdf
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/cmap/t1.cmap
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/inputenc.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/inputenc.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/utf8.def
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/utf8.def
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/t1enc.dfu
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/t1enc.dfu
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/ot1enc.dfu
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/ot1enc.dfu
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/omsenc.dfu
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/base/omsenc.dfu
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/lastpage/lastpage.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/lastpage/lastpage.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/tools/indentfirst.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/tools/indentfirst.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/graphics/color.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/graphics/color.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/00miktex/color.cfg
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/00miktex/color.cfg
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/graphics/graphics.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/graphics/graphics.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/graphics/trig.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/graphics/trig.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/00miktex/graphics.cfg
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/00miktex/graphics.cfg
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/units/units.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/units/units.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/units/nicefrac.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/units/nicefrac.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/hyperref/backref.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/hyperref/backref.sty
+INPUT C:/Users/Artur Schütte/AppData/Roaming/MiKTeX/2.9/tex/latex/abntex2/abntex2cite.sty
+INPUT C:/Users/Artur Schütte/AppData/Roaming/MiKTeX/2.9/tex/latex/abntex2/abntex2cite.sty
+INPUT C:/Users/Artur Schütte/AppData/Roaming/MiKTeX/2.9/tex/latex/abntex2/abntex2abrev.sty
+INPUT C:/Users/Artur Schütte/AppData/Roaming/MiKTeX/2.9/tex/latex/abntex2/abntex2abrev.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/ltxmisc/relsize.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/ltxmisc/relsize.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/ltxmisc/relsize.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/bold-extra/bold-extra.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/bold-extra/bold-extra.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/eso-pic/eso-pic.sty
+INPUT C:/Program Files (x86)/MiKTeX 2.9/tex/latex/eso-pic/eso-pic.sty
+INPUT fixos/comandos.tex
+INPUT fixos/comandos.tex
+INPUT fixos/novosComandos.tex
+INPUT fixos/novosComandos.tex
+INPUT editaveis/informacoes.tex
+INPUT editaveis/informacoes.tex
+INPUT fixos/informacoes.tex
+INPUT fixos/informacoes.tex
+INPUT fixos/setup.tex
+INPUT fixos/setup.tex
+OUTPUT tcc.idx
+INPUT tcc.aux
+INPUT tcc.aux
