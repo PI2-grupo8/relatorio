@@ -368,15 +368,17 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
 
   \begin{figure}[!htbp]
   \begin{center}
-  \includegraphics[width=.3\textwidth]{figuras/sdcard.eps}
+  \includegraphics[width=.2\textwidth]{figuras/sdcard.eps}
   \caption{\label{fig:sdcard}Cartão de memória.}
   \end{center}
   \end{figure}
 
   Posteriormente, o acesso aos dados será feito através de uma conexão de  rede
-  wireless entre um computador e a Raspberry. Para a comunicação  entre os
-  dispositivos será utilizado o protocolo FTP, que é bastante utilizado para
-  transferência de arquivos em uma rede.
+  wireless entre um computador e a Raspberry, a qual será configurada como
+  um Acess Point. Desta forma, para a comunicação entre os
+  dispositivos, será implementado um servidor com base no protocolo FTP. Através
+  deste servidor, serão transmitidas configurações para o veículo e também serão
+  coletados os dados das medições.
 
   \subsubsection{Apresentação das Informações}
 
@@ -392,15 +394,11 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
   todos os membros do grupo já possuem experiência com a tecnologia.
 
   Em concordância com os requisitos estabelecidos, essa aplicação
-  permitirá o upload do arquivo CSV gerado pelo veículo, dentro de
-  uma área restrita da aplicação, disponível apenas após a realização
-  do login.
-  Além da representação gráfica, o gestor da lavoura poderá obter
-  esses dados em formato de relatório, sendo permitida sua
-  exportação para um arquivo PDF (Portable Document Format).
+  permitirá ao usuário inserir alguns parâmetros de configurações e visualizar
+  os resultados e dados das medições.
 
-  Após a obtenção dos dados, o usuário possuirá a opção de visualiza-los de forma gráfica, sendo que esta visualização se dará
-  com base em um mapa de calor (\textit{heatmap}), conforme a figura \ref{fig:heatmap} representa, para uma melhor representação da lavoura.
+  Através da aplicação, o usuário será capaz de visualizar os dados de forma gráfica,
+  sendo que esta visualização se dará com base em um mapa de calor (\textit{heatmap}), conforme a figura \ref{fig:heatmap} representa, para uma melhor representação da lavoura.
 
   O conceito dos mapas de calor é baseado na representação de diversos pontos sobrepostos em um mapa, sendo que quanto mais pontos
   forem existentes em uma mesma posição, uma coloração mais forte será atribuída, por isso ganhando essa denominação.
@@ -414,3 +412,52 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
   \caption{\label{fig:heatmap}Exemplo de mapa de calor.}
   \end{center}
   \end{figure}
+
+  \subsubsection{Solução do Sistema Web}
+  O desenvolvimento da solução web se deu em três etapas: prototipagem do sistema web,
+  prototipagem dos servidores FTP e TCP para comunicação e implementação do sistema
+  a partir das prototipagens.
+
+  A prototipagem foi realizada para se ter uma ideia geral da solução e obter 
+  refinamentos. Assim, desenvolvemos protótipos não funcionais de algumas funcionalidades
+  além de programas exemplo para os servidores que irão fazer a comunicação.
+
+  A partir da prototipagem, foram então implementadas os seguintes componentes
+  do sistema:
+
+  \begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[width=.6\textwidth]{figuras/index.eps}
+  \caption{\label{fig:print_index}Página inicial}
+  \end{center}
+  \end{figure}
+  
+  A página inicial agirá como um menu de opções. A partir dela o usuário poderá
+  iniciar o processo de medição e acessar outras funcionalidades do sistema.
+
+  \begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[width=.6\textwidth]{figuras/config.eps}
+  \caption{\label{fig:print_config}Página: Configurações Gerais}
+  \end{center}
+  \end{figure}
+
+  As página de configurações será utilizada tanto para download de dados do sistema
+  embarcado, quanto envio de parâmetros de configuração para o veículo, tais como:
+  quantidade de fileiras, medições e distância entre cada medição.
+
+  \begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[width=.7\textwidth]{figuras/medicoes.eps}
+  \caption{\label{fig:print_medicoes}Página: Gerenciamento das Medições}
+  \end{center}
+  \end{figure}
+
+  Na tela de medições é realizado gerenciamento das medições armazenadas
+  no sistema. Nesta página o usuário pode visualizar detalhes sobre cada medição,
+  acessar a visualização gráfica, excluir um registro ou ainda exportar os dados para um arquivo.
+
+  As demais funcionalidades ainda estão em processo de desenvolvimento.
+
+  \newpage
+
