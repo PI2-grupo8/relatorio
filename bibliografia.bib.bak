@@ -213,4 +213,24 @@ year = {2012}
   url    = {http://www.pictronics.com.br/downloads/apostilas/servomotores.pdf},
 }
 
+@Online{ottoboni,
+  author = {Augusto Ottoboni},
+  title  = {Servo-acionamentos},
+  year   = {2002},
+  url    = {http://w3.ufsm.br/fuentes/index_arquivos/servo.pdf},
+}
+
+@Online{uartsparkfun,
+  title  = {Serial Communications --- UARTs},
+  year   = {2002},
+  url    = {https://learn.sparkfun.com/tutorials/serial-communication#uarts},
+}
+
+
+@Online{ultimategps,
+  title  = {Adafruit Ultimate GPS},
+  year   = {2016},
+  url    = {https://cdn-learn.adafruit.com/downloads/pdf/adafruit-ultimate-gps.pdf},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}

@@ -53,7 +53,7 @@
 
   \begin{figure}[!htbp]
   \begin{center}
-  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/wheel.eps}
+  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/wheel2.eps}
   \caption{\label{WHEEL}Roda escolhida para o projeto.}
   \end{center}
   \end{figure}
@@ -63,11 +63,12 @@
   \pagebreak
 
   \subsection{Sistema de Direção}
-    O sistema de direção é composto por um conjunto de barras chamado de garfo, uma haste que permite o servomotor girar a roda dianteira e um eixo que é conectado ao rolamento da roda ligando as barras do garfo. Este sistema reduz um pouco o peso do veículo, pois elimina a caixa de direção.
+    O sistema de direção é composto por um conjunto de barras em forma de garfo, 
+    que são movidas por um motor de passo modelo 22KM–0213G6V. Este motor tem seu torque aumentado através de um par de engrenagens, cuja relação é de 5 pra 1. O eixo atravessa uma das barras do chassi e utiliza uma bucha e dois rolamentos para permitir a livre rotação eixo de direção.  
      
-    A escolha do servomotor é devida a capacidade de posicionamento angular em um intervalo de tempo. O seu posicionamento angular é transmitido para a roda fazendo com que a mesma possa realizar curvas durante o trajeto. O sistema escolhido não é o melhor que existe, mas foi o que apresentou melhores resultados na fabricação e teste.
+    A escolha do motor de passo é motivada pela capacidade de posicionamento angular, que é realizado pelo movimento de passos do motor, e possui a relação de 1,8$^o$ por passo, além de seu torque. O seu posicionamento angular é transmitido para a roda, fazendo com que a mesma possa realizar curvas durante o trajeto e manter a distância correta da fileira a ser perfurada. 
     
-    O servomotor será conectado a barra por meio de um adaptador que transmitirá todo o movimento à roda. O layout da estrutura do sistema de direção é mostrado abaixo. 
+    O motor de passo será conectado a barra por meio de um acoplamento, que transmitirá todo o movimento à roda. O layout da estrutura do sistema de direção é mostrado abaixo. 
     
         \begin{figure}[!htbp]
         	\begin{center}
@@ -79,8 +80,8 @@
      \begin{figure}[!htbp]
      	\begin{center}
      		(a)\includegraphics[height=.3\textheight]{figuras/direcao2.eps}
-        	(b)\includegraphics[height=.3\textheight]{figuras/d2.eps}
-     		\caption{(a) Garfo a ser conectado a roda e ao servomotor; (b) Sistema de direção completo.}
+        	(b)\includegraphics[height=.3\textheight]{figuras/motor_passo.eps}
+     		\caption{(a) Garfo a ser conectado a roda e ao motor de passo; (b) Motor de passo com par de engrenagens.}
      	\end{center}
      \end{figure}
       
@@ -90,11 +91,11 @@
   \begin{table}[!htbp]
   \begin{center}
   \caption{Roda e Pneu}
-  \begin{tabular}{|p{2cm}|p{3cm}|p{2cm}|p{4cm}|}
+  \begin{tabular}{|p{2cm}|p{3cm}|p{2cm}}
   \hline
-  \textbf{Roda e Pneu} & \textbf{Descrição} & \textbf{Imagem} & \textbf{Link}\\\hline\hline
-  Tipo 1 & Roda de MBS Atom, 80/85 ou Colt 80 placas, de 7 polegadas & \includegraphics[width=2cm]{figuras/roda_mbs.eps} & \href{http://shop.mbs.com/accessories-488/mountainboard-wheels/complete-wheels/complete-7-wheel.html}{shop.mbs.com}\\\hline
-  Tipo 2 & Rodas 17mm Buggy Off Road Pneu Para Areia E Terra -FH & \includegraphics[width=2cm]{figuras/roda_buggy.eps} & \href{http://produto.mercadolivre.com.br/MLB-788601174-par-de-rodas-17mm-buggy-off-road-pneu-para-areia-e-terra-fh-_JM}{mercadolivre.com.br}\\\hline
+  \textbf{Roda e Pneu} & \textbf{Descrição} & \textbf{Imagem}\\\hline\hline
+  Tipo 1 & Roda de MBS Atom, 80/85 ou Colt 80 placas, de 7 polegadas & \includegraphics[width=2cm]{figuras/roda_mbs.eps}\\\hline
+  Tipo 2 & Rodas 17mm Buggy Off Road Pneu Para Areia E Terra -FH & \includegraphics[width=2cm]{figuras/roda_buggy.eps}\\\hline
   \end{tabular}
   \end{center}
   \end{table}
@@ -102,11 +103,11 @@
   \begin{table}[!htbp]
   \begin{center}
   \caption{Chassi}
-  \begin{tabular}{|p{2cm}|p{3cm}|p{2cm}|p{4cm}|}
+  \begin{tabular}{|p{2cm}|p{3cm}|p{2cm}|}
   \hline
-  \textbf{Chassi} & \textbf{Material} & \textbf{Imagem} & \textbf{Link}\\\hline\hline
-  Tipo 1 & Aço inox & \includegraphics[width=2cm]{figuras/chassi_inox.eps} & \href{http://www.banggood.com/pt/DIY-C600-DIY-Remote-Control-Crawler-Chassis-Smart-Track-Stainless-Stell-Metal-Tank-p-1079216.html}{banggood.com}\\\hline
-  Tipo 2 & Aluminio & \includegraphics[width=2cm]{figuras/chassi_aluminio.eps} & \href{https://pt.aliexpress.com/store/product/New-25-aluminum-alloy-tracking-robot-tank-chassi-car-4WD-metal-tank-car-chassis-for-DIY/421824_32294898374.html}{pt.aliexpress.com}\\\hline
+  \textbf{Chassi} & \textbf{Material} & \textbf{Imagem}\\\hline\hline
+  Tipo 1 & Aço inox & \includegraphics[width=2cm]{figuras/chassi_inox.eps}\\\hline
+  Tipo 2 & Aluminio & \includegraphics[width=2cm]{figuras/chassi_aluminio.eps}\\\hline
   \end{tabular}
   \end{center}
   \end{table}
@@ -114,11 +115,11 @@
   \begin{table}[!htbp]
   \begin{center}
   \caption{Eixo}
-  \begin{tabular}{|p{2cm}|p{3cm}|p{2cm}|p{4cm}|}
+  \begin{tabular}{|p{2cm}|p{3cm}|p{2cm}|}
   \hline
-  \textbf{Eixo} & \textbf{Material} & \textbf{Imagem} & \textbf{Link}\\\hline\hline
-  Tipo 1 & Aço inox & \includegraphics[width=2cm]{figuras/eixo_inox.eps} & \href{http://produto.mercadolivre.com.br/MLB-681527051-par-de-eixo-dogbone-84-mm-06061-redcat-himoto-exceed-hsp-_JM}{mercadolivre.com.br}\\\hline
-  Tipo 2 & Aluminio  & \includegraphics[width=2cm]{figuras/eixo_aluminio.eps} & \href{http://produto.mercadolivre.com.br/MLB-700430643-eixos-dogbones-em-aluminio-mastadon-spino-himoto-23608-par-_JM}{mercadolivre.com.br}\\\hline
+  \textbf{Eixo} & \textbf{Material} & \textbf{Imagem}\\\hline\hline
+  Tipo 1 & Aço inox & \includegraphics[width=2cm]{figuras/eixo_inox.eps}\\\hline
+  Tipo 2 & Aluminio  & \includegraphics[width=2cm]{figuras/eixo_aluminio.eps}\\\hline
   \end{tabular}
   \end{center}
   \end{table}
@@ -126,11 +127,11 @@
     \begin{table}[!htbp]
     	\begin{center}
     		\caption{Carenagem}
-    		\begin{tabular}{|p{3cm}|p{3cm}|p{2cm}|p{4cm}|}
+    		\begin{tabular}{|p{3cm}|p{3cm}|p{2cm}|}
     			\hline
     			\textbf{Carenagem} & \textbf{Material} & \textbf{Imagem} & \textbf{Link}\\\hline\hline
-    			Tipo 1 & Fibra de vidro & \includegraphics[width=2cm]{figuras/carenagem_fibra.eps} & \href{http://produto.mercadolivre.com.br/MLB-712761072-kit-resina-500g-manta-fibra-de-vidro-300g-10g-catalizador-_JM}{mercadolivre.com.br}\\\hline
-    			Tipo 2 & Plástico de fibra de carbono para impressora 3D & \includegraphics[width=2cm]{figuras/carenagem_plastico.eps} & \href{http://produto.mercadolivre.com.br/MLB-704169297-envelopamento-fibra-carbono-teto-ou-capo-1x122-_JM}{mercadolivre.com.br}\\\hline
+    			Tipo 1 & Fibra de vidro & \includegraphics[width=2cm]{figuras/carenagem_fibra.eps}\\\hline
+    			Tipo 2 & Plástico de fibra de carbono para impressora 3D & \includegraphics[width=2cm]{figuras/carenagem_plastico.eps}\\\hline
     		\end{tabular}
     	\end{center}
     \end{table}
@@ -190,7 +191,7 @@ Os resultados obtidos foram considerados satisfatórios e, a partir desse ponto,
  
  Para o seu dimensionamento, foram considerados alguns parâmetros iniciais, como massa de 16 kg e velocidade de deslocamento de 0,12 m/s. Com isso, foi possível obter aproximadamente 6,7 N.m de torque e 40W de potência. Para atender a essa demanda, optou-se por utilizar um motor modelo Mabuchi GD – 558RC/LC 12 V. O qual possui 38 W e um torque máximo de 9,3 N.m.
  
- 
+ Para o sistema de direção do veiculo foi escolhido um motor de passo, representado na Figura \ref{fig:passo}. Este motor fornece movimentos precisos e são usados em aplicações em que o controle de ângulo de rotação, velocidade, posição e sincronismos são os requisitos. O ponto forte desse tipo de motor não é sua força (torque) e nem altas velocidades, mas é a capacidade de controle de forma acurada.  Portanto este dispositivo é amplamente usado em impressoras, scanners, robôs, câmaras de vídeo, brinquedos, automação industrial entre outros dispositivos eletrônicos \cite{brites}.
       
        \begin{figure}[!htbp]
        	\begin{center}
@@ -198,28 +199,15 @@ Os resultados obtidos foram considerados satisfatórios e, a partir desse ponto,
        		\caption{Motor Mabuchi GD - 558RC/LC 12V}
        	\end{center}
        \end{figure}
-       
-       Para o controle de direção do veículo foi escolhido um servomotor. Este dispositivo consiste em uma máquina síncrona, cuja rotação é proporcional à um valor de entrada, formada por uma parte fixa (estator) e outra móvel (rotor). O primeiro utiliza uma bobinagem especial para proporcionar alta dinâmica ao sistema, enquanto o segundo é formado por ímãs dispostos linearmente e com um gerador de sinais denominado resolver que fornece os sinais de posição e velocidade \cite{ottoboni}.
-       
-              \begin{figure}[!htbp]
-              	\begin{center}
-              		\includegraphics[keepaspectratio=true,scale=1]{figuras/servo1.eps}
-              		\caption{Estrutura Básica de um Servomotor}
-              	\end{center}
-              \end{figure}
 
-A estrutura básica do servo consiste em um sistema de controle em malha fechada que converte um sinal elétrico num movimento de uma alavanca através de uma comparação entre a posição anterior e a desejada. Além disso, o sistema é capaz de determinar o sentido que o motor vai girar através da polaridade da tensão aplicada. Com o intuito de transferir mais torque para o eixo, o motor possui engrenagens que ajudam a reduzir a rotação do motor. Por fim, há ainda um potenciômetro que é ligado ao eixo de saída do servo, onde geralmente é acoplada uma alavanca, com o objetivo de monitorar a posição do eixo. Com isso, o potenciômetro funciona como um sensor para o sistema de controle, fechando a malha de funcionamento do servo motor \cite{ncb}.
-
-O ângulo do eixo é definido pela largura de um pulso de um sinal de entrada (PWM – Pulse Width Modulation) ou seja, o sistema de controle do motor define um período para monitorar o sinal de entrada e verifica o tempo da alteração de 0V para a tensão máxima desse sinal. Através do tempo de alteração identificado em um período, o sistema verifica a posição que se encontra o potenciômetro e faz uma comparação com a posição anterior \cite{santos}.
-
-Considerando as necessidades inerentes ao sistema de direção, buscou-se um modelo capaz de prover robustez e alto torque. Sendo assim foi escolhido o modelo Tower Pro MG995, que apresenta uma tensão de operação na faixa de 4,8 a 7,2V, engrenagens metálicas e um torque de até 15kgf.cm. Além disso, sua faixa de rotação é de 180º, seu peso é de apenas 69g e apresenta compatibilidade com o micro controlador utilizado. Para o seu controle, foi utilizada a biblioteca nativa do Arduino “servo.h”, que fora desenvolvida especialmente para este tipo de dispositivo. 
-
-              \begin{figure}[!htbp]
-              	\begin{center}
-              		\includegraphics[width=.5\textwidth]{figuras/servo2.eps}
-              		\caption{Tower Pro MG995. Fonte: Felipeflop}
-              	\end{center}
-              \end{figure}
+         \begin{figure}[!htbp]
+         	\begin{center}
+         		\includegraphics[keepaspectratio=true,scale=1]{figuras/passo.eps}
+         		\caption{Motor de Passo - Modelo 22KM–0213G6V}
+         		\label{fig:passo}
+         	\end{center}
+         \end{figure}     
+            
 
      \item Bateria
 
