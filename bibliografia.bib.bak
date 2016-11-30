@@ -233,4 +233,28 @@ year = {2012}
   url    = {https://cdn-learn.adafruit.com/downloads/pdf/adafruit-ultimate-gps.pdf},
 }
 
+@Article{brites,
+  author = {Felipe Brites},
+  title  = {Motor de Passo},
+  year   = {2008},
+}
+
+@Article{bde,
+  author = {BDE},
+  title  = {Motor de Passo NEMA 23},
+  year   = {2014},
+}
+
+@Manual{allegro,
+  author = {Allegro},
+  title  = {A4988 - DMOS Microstepping Driver with Translator And Overcurrent Protection},
+  year   = {2015},
+}
+
+@Article{flop,
+  author = {Felipe Flop},
+  title  = {Driver Motor de Passo A4988},
+  year   = {2016},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}

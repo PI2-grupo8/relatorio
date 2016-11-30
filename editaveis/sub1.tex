@@ -70,20 +70,54 @@
     
     O motor de passo será conectado a barra por meio de um acoplamento, que transmitirá todo o movimento à roda. O layout da estrutura do sistema de direção é mostrado abaixo. 
     
-        \begin{figure}[!htbp]
-        	\begin{center}
-        		\includegraphics[keepaspectratio=true,scale=1]{figuras/direcao1.eps}
-        		\caption{Sistema de direção acoplado ao chassi}
-        	\end{center}
+    
+    \begin{figure}[!htbp]
+                    	\begin{center}
+                    		\includegraphics[keepaspectratio=true,scale=1]{figuras/direcao1.eps}
+                    		\caption{Sistema de direção acoplado ao chassi}
+                    	\end{center}
+     \end{figure}
+                    
+     \begin{figure}[!htbp]
+                    	\begin{center}
+                    		(a)\includegraphics[height=.3\textheight]{figuras/direcao2.eps}
+                    		(b)\includegraphics[height=.3\textheight]{figuras/motor_passo.eps}
+                    		\caption{(a) Garfo a ser conectado a roda e ao motor de passo; (b) Motor de passo com par de engrenagens.}
+                    	\end{center}
+      \end{figure}
+    
+    Para o controle de direção do veículo foi escolhido um motor de passo bipolar \cite{brites}. Estes são dispositivos eletromecânicos que convertem pulsos elétricos em movimentos mecânicos que geram variações angulares discretas. O rotor ou eixo de um motor de passo é rotacionado em pequenos incrementos angulares, denominados “passos”, quando pulsos elétricos são aplicados em uma determinada sequência em seus terminais. A rotação de tais motores é diretamente relacionada aos impulsos elétricos que são recebidos, bem como a sequência a qual tais pulsos são aplicados reflete diretamente na direção a qual o motor gira.
+    
+        \begin{figure}[h]
+        	\centering
+        	\includegraphics[keepaspectratio=true, scale=1]{figuras/passo_unipolar.eps}
+        	\caption{Motor de passo unipolar}
+        	\label{fig:unipolar}
         \end{figure}
     
-     \begin{figure}[!htbp]
-     	\begin{center}
-     		(a)\includegraphics[height=.3\textheight]{figuras/direcao2.eps}
-        	(b)\includegraphics[height=.3\textheight]{figuras/motor_passo.eps}
-     		\caption{(a) Garfo a ser conectado a roda e ao motor de passo; (b) Motor de passo com par de engrenagens.}
-     	\end{center}
-     \end{figure}
+    Conforme ilusta a Figura \ref{fig:unipolar}, o funcionamento básico do motor de passo é dado pelo uso de solenoides alinhados dois a dois que quando energizados atraem o rotor fazendo-o se alinhar com o eixo determinado pelos solenoides, causando assim uma pequena variação de ângulo, chamada de passo. A velocidade e o sentido de movimento são determinados pela forma como cada solenoide é ativado. Os motores bipolares têm um único enrolamento por fase. A corrente em um enrolamento precisa ser invertida a fim de inverter um polo magnético, assim o circuito de condução é um pouco mais complicado, e necessita de um arranjo de ponte H \cite{brites}.
+    
+    Ponte H é um circuito eletrônico que permite que um motor rode tanto para um sentido quanto para o outro. O nome ponte H é dado pela forma que assume o circuito quando montado. O circuito é construído com quatro “chaves” que são acionadas de forma alternada. Para cada configuração das chaves o motor gira em um sentido.
+    
+    Considerando as necessidades inerentes ao sistema de direção, buscou-se um modelo capaz de prover robustez, alto torque e viabilidade de controle. Sendo assim foi escolhido um NEMA 23 da Matsushita, que apresenta uma tensão de operação na faixa de 12 a 36V e um torque de até 10kgf.cm. Além disso, sua resolução de passo é de 1.8$^o$, e sua corrente de entrada máxima é de 2A. Para o seu controle, foi utilizada a biblioteca “accelstepper” disponibilizada pela Adafruit. Vale ressaltar que o motor será acoplado a uma caixa de redução, logo o torque resultante na direção será superior ao fornecido pelo motor. 
+    
+            \begin{figure}[h]
+            	\centering
+            	\includegraphics[keepaspectratio=true, scale=1]{figuras/matsu.eps}
+            	\caption{Matsushita NEMA 23. Fonte: \cite{bde}}
+            	\label{fig:matsu}
+            \end{figure}
+    
+    Tendo em vista a necessidade de utilização de uma ponte H, foram considerados diversos circuitos desenvolvidos especificamente para o controle de motores. Dentre as opções disponíveis, escolheu-se o A4988 fabricado pela Allegro. Este circuito, ilustrado na Figura \ref{fig:drivepasso}, é um \textit{driver} de micro-passo completo desenvolvido para fácil operação. Além disso, ele foi projetado para operar motores de passo bipolares em diversas configurações de passo e apresenta uma capacidade de condução de saída de até 35 V e aproximadamente 2 A.
+    
+                \begin{figure}[!h]
+                	\centering
+                	\includegraphics[keepaspectratio=true, scale=0.4]{figuras/drive_passo.eps}
+                	\caption{Driver Allegro A4988. Fonte: \cite{flop}}
+                	\label{fig:drivepasso}
+                \end{figure}
+                
+
       
   \subsection{Estrutura}
   Após a definição dos sistemas que compõem a parte mecânica deste projeto é necessário a definição de uma estrutura externa para o veículo (rodas, pneus, chassi, eixos e carenagem). Foi feita uma pesquisa para verificar quais materiais atenderiam as necessidades da estrutura do veículo. Portanto seguem as tabelas comparativas de possíveis materiais a serem usados.
@@ -276,7 +310,7 @@ Os resultados obtidos foram considerados satisfatórios e, a partir desse ponto,
 
      \begin{figure}[!htbp]
      \begin{center}
-     \includegraphics[keepaspectratio=true,scale=0.5]{figuras/diagramaunifilar.eps}
+     \includegraphics[keepaspectratio=true,scale=0.5]{figuras/unifilar.eps}
      \caption{\label{diagramaunifilar}Diagrama Unifilar dos Componentes}
      \end{center}
      \end{figure}
