@@ -279,7 +279,7 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
 
   A função \textit{complete\_line}, figura \ref{fig:complete_line}, é responsável por verificar a distância percorrida pelo veículo, mantê-lo
   seguro em relação à parede e realizar a coleta de dados referentes a um canteiro. A parte de verificação
-  da distância percorrida pelo veículo ainda está em desenvolvimento, porém, a mesma partirá do princípio
+  da distância percorrida pelo veículo parte do princípio
   de iniciar um timer, coletar a velocidade instantânea do veículo e calcular a distância que foi percorrida.
   Após o veículo locomover-se a distância necessária para uma medição, que
   será realizada através da função \textit{start\_drill}, o processo se repetirá até que todas as medições da fileira sejam atingidas. Ao final desse processo, o número de canteiros medidos será incrementado em uma unidade.
@@ -292,7 +292,7 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
   \end{figure}
 
   O princípio do algoritmo de \textit{Wall Follower} encontra-se no método \textit{check\_wall\_distance}, figura \ref{fig:check_wall_distance}, uma vez que são lidos os dados dos sensores ultrassônicos com auxílio
-  da função \textit{read\_sonar} e verificado em qual estado o veículo encontra-se, assim, com base nesse estado, será chamada uma função que irá direcionar o veículo para uma distância segura. Como a função de direcionamento do veículo ainda não foi implementada, apenas é imprimido na tela a distância de cada um dos sensores ultrassônicos.
+  da função \textit{read\_sonar} e verificado em qual estado o veículo encontra-se, assim, com base nesse estado, é chamada a função de direcionamento do veículo.
 
   \begin{figure}[!htbp]
   \begin{center}
@@ -301,8 +301,14 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
   \end{center}
   \end{figure}
 
-  As funções \textit{make\_first\_curve}, \textit{make\_second\_curve} e \textit{make\_big\_curve} ainda não
-  foram implementadas.
+  A função \textit{make\_first\_curve} é responsável por realizar a primeira curva a direita. Parte do princípio de que o veículo fique verificando o sonar frontal até que o mesmo não identifique uma parede por perto, ou seja, distância medida pelo sonar sendo muito alta. Quando tal verificação é feita, o veículo percorrerá uma distância segura para realizar a curva sem que sua parte traseira danifique o canteiro. Após realizada a curva, o veículo continuará se movendo com o algoritmo de \textit{Wall Follower} até que encontre a próxima curva. A função \textit{make\_second\_curve} segue o mesmo princípio desta explicada.
+
+  \begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{figuras/make_first_curve.eps}
+  \caption{\label{fig:check_wall_distance}Corpo do Método \textit{make\_first\_curve}.}
+  \end{center}
+  \end{figure}
 
   \subsection{Informações}
 
