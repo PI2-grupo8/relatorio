@@ -118,7 +118,7 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
 	\end{center}
 	\end{figure}
 
-	\subsubsection{GPS (Adafruit Ultimate)} 
+	\subsubsection{GPS (Adafruit Ultimate)}
 
 	O módulo GPS é utilizado para correlacionar os dados adquiridos da plantação com
 	os pontos no mapa, e também para restar a posição da IMU para reduzir os erros
@@ -388,7 +388,7 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
 
   \subsubsection{Apresentação das Informações}
 
-  Uma parte importante do projeto consiste na apresentação dos
+  Uma parte importante do projeto consistiu na apresentação dos
   dados para o usuário encarregado pela gestão da lavoura. Para essa demanda,
   foi definido o desenvolvimento de uma aplicação web, utilizando
   o \textit{framework} Rails.
@@ -400,14 +400,15 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
   todos os membros do grupo já possuem experiência com a tecnologia.
 
   Em concordância com os requisitos estabelecidos, essa aplicação
-  permitirá ao usuário inserir alguns parâmetros de configurações e visualizar
+  permite ao usuário inserir alguns parâmetros de configurações e visualizar
   os resultados e dados das medições.
 
-  Através da aplicação, o usuário será capaz de visualizar os dados de forma gráfica,
-  sendo que esta visualização se dará com base em um mapa de calor (\textit{heatmap}), conforme a figura \ref{fig:heatmap} representa, para uma melhor representação da lavoura.
+  Através da aplicação, o usuário é capaz de visualizar os dados de forma gráfica,
+  sendo que esta visualização se dá com base em um mapa de calor (\textit{heatmap}), conforme a figura \ref{fig:heatmap} representa,
+	para uma melhor representação da lavoura.
 
   O conceito dos mapas de calor é baseado na representação de diversos pontos sobrepostos em um mapa, sendo que quanto mais pontos
-  forem existentes em uma mesma posição, uma coloração mais forte será atribuída, por isso ganhando essa denominação.
+  forem existentes em uma mesma posição, uma coloração mais forte é atribuída, por isso ganhando essa denominação.
 
   Para a implementação dos mapas de calor no contexto deste projeto, foi utilizada a API (\textit{Application Programming Interface})
   do Google Maps. Essa API permite acesso as imagens dos mapas e a posterior aplicação de uma camada com os pontos do mapa de calor.
@@ -424,8 +425,8 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
   prototipagem dos servidores FTP e TCP para comunicação e implementação do sistema
   a partir das prototipagens.
 
-  A prototipagem foi realizada para se ter uma ideia geral da solução e obter 
-  refinamentos. Assim, desenvolvemos protótipos não funcionais de algumas funcionalidades
+  A prototipagem foi realizada para se ter uma ideia geral da solução e obter
+  refinamentos. Assim, foram desenvolvidos protótipos não funcionais de algumas funcionalidades
   além de programas exemplo para os servidores que irão fazer a comunicação.
 
   A partir da prototipagem, foram então implementadas os seguintes componentes
@@ -437,8 +438,8 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
   \caption{\label{fig:print_index}Página inicial}
   \end{center}
   \end{figure}
-  
-  A página inicial agirá como um menu de opções. A partir dela o usuário poderá
+
+  A página inicial age como um menu de opções. A partir dela o usuário pode
   iniciar o processo de medição e acessar outras funcionalidades do sistema.
 
   \begin{figure}[!htbp]
@@ -448,7 +449,7 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
   \end{center}
   \end{figure}
 
-  As página de configurações será utilizada tanto para download de dados do sistema
+  As página de configurações é utilizada tanto para download de dados do sistema
   embarcado, quanto envio de parâmetros de configuração para o veículo, tais como:
   quantidade de fileiras, medições e distância entre cada medição.
 
@@ -460,10 +461,31 @@ Além disso, as ligações entre o sensor e o microcontrolador foram realizadas 
   \end{figure}
 
   Na tela de medições é realizado gerenciamento das medições armazenadas
-  no sistema. Nesta página o usuário pode visualizar detalhes sobre cada medição,
-  acessar a visualização gráfica, excluir um registro ou ainda exportar os dados para um arquivo.
+  no sistema. Nesta página o usuário pode visualizar detalhes sobre cada medição e
+  acessar a visualização gráfica destes mesmos dados.
 
-  As demais funcionalidades ainda estão em processo de desenvolvimento.
+	\begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[width=.7\textwidth]{figuras/calibracao.eps}
+  \caption{\label{fig:print_calibracao}Página: Calibração}
+  \end{center}
+  \end{figure}
+
+	Na página de calibrações é realizada o envio das informações inerentes a calibração
+	do sensor de umidade do solo.
+
+	\begin{figure}[!htbp]
+  \begin{center}
+  \includegraphics[width=.7\textwidth]{figuras/manual.eps}
+  \caption{\label{fig:print_manual}Página: Manual}
+  \end{center}
+  \end{figure}
+
+	Além das outras páginas da aplicação, temos uma página que contém um manual de como a aplicação
+	deve ser utilizada, tornando assim o seu uso algo simples. Esse manual está disponível no Apêndice \ref{manuel}.
+
+	Após todos os \textit{links} para as outras páginas com funcionalidades ou conteúdos, temos uma indicação
+	do \textit{status} da aplicação e um botão para iniciar a coleta dos dados do solo, após prévia configuração. Estes
+	podem ser vistos na figura ~\ref{fig:print_index}.
 
   \newpage
-
