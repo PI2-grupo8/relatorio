@@ -257,4 +257,10 @@ year = {2012}
   year   = {2016},
 }
 
+@Article{bastos,
+  author = {Cesar Bastos},
+  title  = {Compressibilidade dos Solos},
+  year   = {2013},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
